@@ -156,24 +156,36 @@ def walk(directory):
             yield child
 
 
+portable = repo / "skills"
+portable_manifest = portable / "PORTABLE-MANIFEST.json"
+
 for candidate in walk(repo):
     if candidate.name != "SKILL.md":
         continue
     if skills_dir in candidate.parents:
         continue
-    fail(f"SKILL.md outside the canonical layer: {rel(candidate)}")
-
-legacy = repo / "skills"
-if legacy.is_dir():
-    for stray in legacy.iterdir():
-        if stray.name == "README.md":
+    if portable in candidate.parents:
+        # Generated portable copies are allowed only in skills/<name>/ and are
+        # validated byte-for-byte by scripts/build-portable-skills.py --check.
+        relative = candidate.relative_to(portable)
+        if len(relative.parts) == 2 and relative.parts[1] == "SKILL.md" and relative.parts[0] in names:
+            text = candidate.read_text(encoding="utf-8")
+            if "GENERATED PORTABLE SKILL" not in text:
+                fail(f"Portable skill is not marked generated: {rel(candidate)}")
             continue
-        fail(f"'skills/' must contain only README.md; found {rel(stray)}")
+    fail(f"SKILL.md outside the canonical or generated portable layer: {rel(candidate)}")
 
-for name in names:
-    for impostor in (legacy / f"{name}.md", legacy / name / "SKILL.md"):
-        if impostor.exists():
-            fail(f"Competing definition of canonical skill '{name}': {rel(impostor)}")
+if portable.is_dir():
+    allowed = {"README.md", "PORTABLE-MANIFEST.json", *names}
+    for stray in portable.iterdir():
+        if stray.name not in allowed:
+            fail(f"Unmanaged file in generated skills distribution: {rel(stray)}")
+    if not portable_manifest.is_file():
+        fail("Missing skills/PORTABLE-MANIFEST.json; rebuild portable skills.")
+    for name in names:
+        generated = portable / name / "SKILL.md"
+        if not generated.is_file():
+            fail(f"Missing generated portable skill: {rel(generated)}")
 
 # --- Documentation must name the canonical layer -------------------------------
 
