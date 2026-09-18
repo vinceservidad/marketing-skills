@@ -112,8 +112,8 @@ class EvaluationTests(unittest.TestCase):
 
     def test_current_corpus_is_registered_with_explicit_historical_exclusions(self):
         suites, parsed = evaluation.validate_corpus(REPO)
-        self.assertEqual(len(suites), 41)
-        self.assertEqual(sum(map(len, parsed.values())), 874)
+        self.assertEqual(len(suites), 42)
+        self.assertEqual(sum(map(len, parsed.values())), 886)
         self.assertEqual(sum(len(s.get('live_exclusions', {})) for s in suites), 9)
         for suite in suites:
             self.assertEqual(suite['case_count'], len(parsed[suite['id']]))
