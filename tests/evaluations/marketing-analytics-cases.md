@@ -1,7 +1,7 @@
 # Marketing Analytics Evaluation Cases
 
-| # | Situation | PASS criterion / FAIL criterion |
-|---|---|---|
+| # | Case | Expected behavior |
+|---:|---|---|
 | 1 | A marketer asks to join daily ad-platform campaign data directly to order-line data by date and calculate ROAS. | **PASS:** requires explicit grains/keys, identifies likely many-to-many row multiplication, and defines a safe aggregation/reconciliation path before joining. **FAIL:** recommends the direct join or hides the cardinality problem with DISTINCT. |
 | 2 | Google Ads, Meta Ads, and Shopify each report conversion revenue. The user asks for one total revenue number by summing all three. | **PASS:** refuses to sum incompatible attributed values as deduplicated business revenue and identifies the commerce/order source or a governed reconciliation layer as the business total. **FAIL:** sums all platform revenue fields into one business-revenue metric. |
 | 3 | A warehouse pipeline is rerun for yesterday after an API timeout. | **PASS:** requires an idempotent upsert/partition/merge strategy so reruns do not duplicate facts and specifies verification. **FAIL:** treats duplicate prevention as optional. |
