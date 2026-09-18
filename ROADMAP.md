@@ -6,7 +6,7 @@ Last reconciled: **2026-09-06**.
 
 ## Current state — Governed full-stack Marketing OS
 
-The repository currently has **30 governed skills** in [`.agents/skills/`](.agents/skills/) with one canonical ownership model, shared evidence/governance contracts, behavioral evaluations, and CI validation.
+The repository currently has **31 governed skills** in [`.agents/skills/`](.agents/skills/) with one canonical ownership model, shared evidence/governance contracts, behavioral evaluations, and CI validation.
 
 Completed capability areas include:
 
@@ -19,7 +19,7 @@ Completed capability areas include:
 - cross-agent distribution for Codex and Claude Code from one canonical skill source
 - public GitHub onboarding and truth-governed worked-example standards
 
-The capability registry remains authoritative. Analytics is still only **partially covered** where work becomes BI engineering, warehouse/pipeline design, or dashboard implementation outside existing measurement/diagnostic/reporting owners.
+The capability registry remains authoritative. Marketing analytics engineering is now governed end to end by `$marketing-analytics`, including data contracts, warehouse/pipeline design, metric layers, data quality, BI/dashboard implementation, refresh/backfill governance, and reconciliation. Tracking validity, diagnostic interpretation, reporting narrative, and marketing decisions retain their specialist owners.
 
 ## Completed maturity milestones
 
@@ -57,6 +57,7 @@ The capability registry remains authoritative. Analytics is still only **partial
 - Marketing Operations owns recurring cross-skill loops, state, idempotency, approvals, verification, escalation, and retirement.
 - Optimization & Scaling owns paid-media readiness, marginal economics, controlled expansion/de-scaling, pacing, and guardrails.
 - Marketing Reporting owns cross-channel executive reporting and recurring stakeholder communication.
+- Marketing Analytics owns marketing data contracts, warehouse/pipeline design, semantic metrics, data quality, BI/dashboard implementation, refresh/backfill behavior, lineage, and source-to-output reconciliation.
 
 ### Distribution and usability
 
@@ -66,6 +67,8 @@ The capability registry remains authoritative. Analytics is still only **partial
 - Evaluation cases have executable static validation and an opt-in model-grading harness with offline regression tests. These do not establish a live behavioral pass rate.
 - `GETTING_STARTED.md`, `AGENT_GUIDE.md`, `DISTRIBUTION.md`, and root README provide public onboarding.
 - Worked examples distinguish synthetic, anonymized, and verified public case studies and prohibit fabricated achieved results.
+- `integrations/` defines runtime-neutral connector/MCP/API boundaries, secrets rules, mutation approval, rollback, and verification states without pretending user-specific connections are live.
+- `validation/` defines the real-world evidence registry, privacy/publication rules, and validation-state progression; evidence can grow without making repository structure incomplete.
 
 ## Current cleanup — System consistency
 
@@ -73,9 +76,9 @@ The capability registry remains authoritative. Analytics is still only **partial
 - Keep README, roadmap, architecture, capability registry, examples, and distribution docs synchronized with the actual governed system.
 - Remove or replace stale compact examples when a stronger governed walkthrough exists.
 
-## Next milestone — Real-world validation
+## Ongoing evidence program — Real-world validation
 
-Priority is **validation, not adding skills for the sake of count**.
+The validation framework and registry are now implemented. Priority remains **growing trustworthy evidence, not adding skills for the sake of count**.
 
 - Run and review a reproducible live-model benchmark using the evaluation harness. Preserve raw responses, source identity, exclusions, and grading limits; no live behavioral result is claimed by this tooling release.
 - Validate high-value skills against anonymized real-world cases where permission and evidence allow.
@@ -83,14 +86,14 @@ Priority is **validation, not adding skills for the sake of count**.
 - Record contradictions, failed hypotheses, negative outcomes, and scope limits rather than publishing only wins.
 - Use experiment-learning records to promote only replicated scoped patterns, never one-off results as universal best practices.
 
-## Next milestone — Data contracts and integrations
+## Ongoing deployment program — Provider integrations
 
-Add integration work only when it improves real workflows without moving marketing intelligence out of the skill layer.
+The integration contract layer is complete at repository level. Add provider-specific adapters only when a real runtime/account requires them, without moving marketing intelligence out of the skill layer.
 
-- Document supported data contracts for common platform/account exports.
-- Define connector/MCP boundaries for read access, live mutations, approval, rollback, and verification.
-- Keep Skills as the decision system; treat MCP/connectors/APIs as optional data/action layers.
-- Build an installable OpenAI or Claude plugin only when the target manifest, runtime behavior, permissions, resources, and actual install/publish state can be verified.
+- Extend provider-specific source contracts when real platform exports expose a new grain, key, freshness, or mutation boundary.
+- Keep Skills as the decision system; treat MCP/connectors/APIs as optional data/action layers governed by `integrations/README.md`.
+- Verify each runtime connection separately using documented -> configured -> authenticated -> connected -> authorized -> verified states.
+- Package a marketplace-specific plugin only when distribution value justifies it and the target manifest/runtime can be verified; plugin packaging is optional, not a missing core capability.
 
 ## Next milestone — Operational maintainability
 
