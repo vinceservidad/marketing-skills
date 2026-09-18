@@ -10,8 +10,9 @@ Platform notes below were verified against current OpenAI and Anthropic document
 
 | Consumer | Current support | Path / method | Canonical? |
 |---|---|---|---|
-| OpenAI Codex | **Supported as skills** | `bash scripts/install-skills.sh . "$HOME/.codex"` → `~/.codex/skills/` | No, generated from `.agents/skills/` |
-| Claude Code | **Supported as skills** | `bash scripts/install-claude-skills.sh` → `~/.claude/skills/` | No, generated from `.agents/skills/` |
+| Agent Skills-compatible runtimes | **Supported through generated portable bundles** | `npx skills add vinceservidad/marketing-skills` | No, generated from `.agents/skills/` |
+| OpenAI Codex | **Supported as skills** | `npx skills add vinceservidad/marketing-skills -g -a codex` or managed installer | No, generated from `.agents/skills/` |
+| Claude Code | **Supported as skills** | `npx skills add vinceservidad/marketing-skills -g -a claude-code` or managed installer | No, generated from `.agents/skills/` |
 | Claude Code repo instructions | **Supported** | Root `CLAUDE.md` imports `AGENTS.md` | Bridge only |
 | Custom GPT knowledge | **Supported as derived knowledge** | Generated `gpt-knowledge/pack/` | No, non-executable export |
 | Host connectors / MCP / APIs / browser / BI runtimes | **Supported through integration contract** | [`integrations/README.md`](integrations/README.md) + runtime-specific connection | No |
@@ -27,6 +28,24 @@ Use **plugin** only when an actual installable plugin package/manifest exists fo
 Use [`integrations/README.md`](integrations/README.md) for the live-data/action contract. A documented adapter is not a connected account; connection, authorization, and verification are runtime-specific states.
 
 Use **Custom GPT knowledge export** for `gpt-knowledge/`. Knowledge files can inform a GPT but do not become governed executable skills merely because they are uploaded.
+
+## Portable Agent Skills distribution
+
+`scripts/build-portable-skills.py` converts each canonical skill into a self-contained generated bundle under `skills/<name>/`. The open Agent Skills CLI discovers `skills/` before `.agents/skills/`, so users get portable bundles while contributors keep one canonical source.
+
+Primary install:
+
+```bash
+npx skills add vinceservidad/marketing-skills
+```
+
+Individual skill:
+
+```bash
+npx skills add vinceservidad/marketing-skills --skill google-ads
+```
+
+The repository CI checks byte-exact distribution drift and runs live CLI smoke tests against selected Codex installation and full Claude Code installation.
 
 ## OpenAI / Codex
 
@@ -74,6 +93,7 @@ Capability claims must come from [`CAPABILITY-REGISTRY.md`](CAPABILITY-REGISTRY.
 Canonical governed skills
       ↓
 Install/export/package
+      ├─ skills/<name>/ portable Agent Skills bundles
       ├─ ~/.codex/skills/ + ~/.codex/.marketing-os/
       ├─ ~/.claude/skills/ + ~/.claude/.marketing-os/
       ├─ gpt-knowledge/
