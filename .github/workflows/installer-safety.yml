@@ -145,3 +145,19 @@ jobs:
           grep -q 'marketing-router' "$RUNNER_TEMP/claude-installed.txt"
           grep -q 'google-ads' "$RUNNER_TEMP/claude-installed.txt"
           printf 'Agent Skills CLI installed %s portable skills.\n' "$installed_count"
+      - name: Verify public GitHub shorthand after main push
+        if: github.event_name == 'push'
+        shell: bash
+        run: |
+          set -euo pipefail
+          public_home="$RUNNER_TEMP/skills-cli-public-home"
+          mkdir -p "$public_home"
+          HOME="$public_home" npx --yes skills@latest add vinceservidad/marketing-skills \
+            --skill google-ads \
+            -g \
+            -a codex \
+            -y
+          test -f "$public_home/.agents/skills/google-ads/SKILL.md"
+          test -f "$public_home/.agents/skills/google-ads/_shared/AGENTS.md"
+          HOME="$public_home" npx --yes skills@latest list -g -a codex | tee "$RUNNER_TEMP/public-installed.txt"
+          grep -q 'google-ads' "$RUNNER_TEMP/public-installed.txt"
