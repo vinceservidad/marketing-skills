@@ -211,7 +211,7 @@ Declare grain, keys, source authority, metric semantics, time/currency basis, re
 
 The analytics layer supplies decision-ready data. It does not inherit causal diagnosis, reporting narrative, channel decisions, growth strategy, or scaling decisions.
 
-## 9. Review business outcomes, not convenient proxies
+## 10. Review business outcomes, not convenient proxies
 
 Prefer the primary business outcome and relevant economics over isolated platform metrics.
 
@@ -221,7 +221,7 @@ Keep cross-platform attribution claims separate unless a valid deduplicated meas
 
 At `review`, separate observed result from mechanism interpretation. At `optimize`, choose the next action from the evidence rather than from a generic “best practice.”
 
-## 10. Record learning at the right scope
+## 11. Record learning at the right scope
 
 A valid result should retain:
 
