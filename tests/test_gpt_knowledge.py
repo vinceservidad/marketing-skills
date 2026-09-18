@@ -26,7 +26,9 @@ class ExportTests(unittest.TestCase):
         self.skill.mkdir(parents=True)
         (self.skill / "SKILL.md").write_text("---\nname: owner\n---\n\n# Owner\n\nKeep this rule.\n")
         for name in ["AGENTS.md", "CAPABILITY-REGISTRY.md", *EXPORT.CONTRACTS]:
-            (self.repo / name).write_text(f"# {name}\n\nCanonical rule.\n")
+            target = self.repo / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(f"# {name}\n\nCanonical rule.\n")
         for directory in EXPORT.LIBRARIES:
             (self.repo / directory).mkdir()
             (self.repo / directory / "sample.md").write_text(f"# {directory}\n\nSupporting content.\n")
