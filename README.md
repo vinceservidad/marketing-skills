@@ -1,14 +1,45 @@
-# Full-Stack Marketing OS
+# Marketing Skills
 
 ![GitHub](https://img.shields.io/badge/status-public-brightgreen)
-![Version](https://img.shields.io/badge/version-v1.19.0-blue)
+![Version](https://img.shields.io/badge/version-v2.0.0-blue)
 ![Focus](https://img.shields.io/badge/focus-AI%20Marketing-purple)
 
-An evidence-led full-stack marketing skill and operating system for planning, auditing, diagnosing, creating, testing, and improving full-funnel marketing.
+**The evidence-led marketing operating system for AI agents.**
 
-Built to help AI agents and modern marketing teams work from governed marketing knowledge instead of isolated prompts, copied playbooks, or unsupported “best practices.”
+31 governed marketing skills for strategy, paid media, creative, CRO, SEO, pricing, retention, analytics, measurement, reporting, and growth. The system routes work to the right specialist, applies governed methods, separates evidence from assumptions, and verifies what happened before learning from it.
 
-GitHub is the versioned source of truth. The system combines governed skills, frameworks, playbooks, templates, workflows, shared context, and behavioral evaluations.
+GitHub is the versioned source of truth. `.agents/skills/` is canonical; the public `skills/` directory is generated for portable installation.
+
+## Install in one command
+
+```bash
+npx skills add vinceservidad/marketing-skills
+```
+
+List the available skills:
+
+```bash
+npx skills add vinceservidad/marketing-skills --list
+```
+
+Install one or a few:
+
+```bash
+npx skills add vinceservidad/marketing-skills \
+  --skill google-ads \
+  --skill creative-strategy
+```
+
+Install the full system globally for Codex or Claude Code:
+
+```bash
+npx skills add vinceservidad/marketing-skills --skill '*' -g -a codex -y
+npx skills add vinceservidad/marketing-skills --skill '*' -g -a claude-code -y
+```
+
+The same portable bundles can be installed by other agents supported by the open Agent Skills CLI, including Cursor, Windsurf, GitHub Copilot, OpenCode, Gemini CLI, Cline, Roo, Warp, and others.
+
+Not sure which skill to use? Install the full system and start with `$marketing-router`.
 
 ## Start here
 
@@ -19,9 +50,9 @@ It covers the complete path:
 ```text
 GitHub
   ↓
-Clone / download
+npx skills add
   ↓
-Install to Codex or Claude Code
+Codex / Claude Code / Cursor / Windsurf / Copilot / other compatible agents
   ↓
 Verify
   ↓
@@ -114,23 +145,30 @@ Thirty-one governed skills currently live in [`.agents/skills/`](.agents/skills/
 
 ## Cross-agent installation
 
-### Codex
+### Recommended: Agent Skills CLI
 
 ```bash
-bash scripts/install-skills.sh . "$HOME/.codex"
+npx skills add vinceservidad/marketing-skills
 ```
 
-This installs generated runtime copies to `~/.codex/skills/` plus the contracts and libraries needed by those skills.
+The CLI discovers the generated self-contained bundles in `skills/`. Individual skills can be installed without cloning the repository and without losing the shared governance files they depend on.
 
-### Claude Code
+### Advanced managed install
+
+For a full local Codex or Claude installation with the repository's ownership manifest, collision protection, backups, and namespaced `.marketing-os/` resources:
 
 ```bash
+git clone https://github.com/vinceservidad/marketing-skills.git
+cd marketing-skills
+
+# Codex
+bash scripts/install-skills.sh . "$HOME/.codex"
+
+# Claude Code
 bash scripts/install-claude-skills.sh
 ```
 
-This installs the same canonical skill set to `~/.claude/skills/`. Do not maintain a second Claude-specific skill hierarchy.
-
-For clone, verification, updating, troubleshooting, skill selection, and concrete usage examples, use [`GETTING_STARTED.md`](GETTING_STARTED.md).
+Both paths are generated from the same canonical `.agents/skills/` source.
 
 ## Repository structure
 
@@ -140,7 +178,7 @@ For clone, verification, updating, troubleshooting, skill selection, and concret
 .agents/skills/        CANONICAL — governed portable operating skills
 ~/.codex/skills/       GENERATED — local Codex runtime install
 ~/.claude/skills/      GENERATED — local Claude Code personal-skill install
-skills/                Index only — no competing instructions
+skills/                GENERATED portable self-contained Agent Skills bundles
 frameworks/            Governed decision models and methods
 playbooks/             Governed scenario workflows
 templates/             Governed reusable deliverable structures
@@ -192,6 +230,7 @@ Scaling is not defined as spending more. The system requires source-of-truth bus
 ## Verify the exports and evaluation tooling
 
 ```bash
+python3 scripts/build-portable-skills.py --check
 python3 scripts/build-gpt-knowledge.py --check
 python3 scripts/eval.py --static
 python3 -m unittest discover -s tests -p 'test_*.py' -v
