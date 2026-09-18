@@ -118,12 +118,13 @@ jobs:
             --skill google-ads \
             -g \
             -a codex \
-            --copy \
             -y
-          test -f "$isolated_home/.codex/skills/marketing-router/SKILL.md"
-          test -f "$isolated_home/.codex/skills/marketing-router/_shared/AGENTS.md"
-          test -f "$isolated_home/.codex/skills/google-ads/SKILL.md"
-          test -f "$isolated_home/.codex/skills/google-ads/_shared/AGENTS.md"
+          test -f "$isolated_home/.agents/skills/marketing-router/SKILL.md"
+          test -f "$isolated_home/.agents/skills/marketing-router/_shared/AGENTS.md"
+          test -f "$isolated_home/.agents/skills/google-ads/SKILL.md"
+          test -f "$isolated_home/.agents/skills/google-ads/_shared/AGENTS.md"
+          test -e "$isolated_home/.codex/skills/marketing-router"
+          test -e "$isolated_home/.codex/skills/google-ads"
       - name: Install all portable skills into Claude Code
         shell: bash
         run: |
@@ -134,7 +135,6 @@ jobs:
             --skill '*' \
             -g \
             -a claude-code \
-            --copy \
             -y
           canonical_count=$(find .agents/skills -mindepth 2 -maxdepth 2 -name SKILL.md -type f | wc -l | tr -d ' ')
           installed_count=$(find "$isolated_home/.claude/skills" -mindepth 2 -maxdepth 2 -name SKILL.md -type f | wc -l | tr -d ' ')
