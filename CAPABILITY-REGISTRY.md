@@ -47,31 +47,13 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Programmatic: supply-path optimization, inventory verification, fraud screening | `$programmatic` |
 | Public relations: media relations, pitch strategy, crisis communications | `$public-relations` |
 | Cross-channel executive reporting, recurring cadence, stakeholder scorecards | `$marketing-reporting` |
+| Marketing analytics engineering: source data contracts, warehouse/pipeline design, conformed models, semantic metric layers, data-quality controls, BI/dashboard implementation, refresh/backfill governance, and source-to-output reconciliation | `$marketing-analytics` |
 
 ## Partially covered
 
-### Analytics
+None currently. Requests outside the governed table must fail closed through the uncovered-request rules below rather than being silently absorbed by a neighboring skill.
 
-| In scope | Owner |
-|---|---|
-| Tracking architecture, event integrity, attribution differences, source reconciliation | `$tracking-measurement` |
-| Performance analysis, segmentation, anomaly diagnosis, competing explanations | `$performance-diagnostics` |
-| Marginal business evidence and paid-media allocation analysis | `$optimization-scaling` |
-
-Not covered: business-intelligence engineering, data-warehouse or pipeline design, dashboard implementation, and analytics deliverables outside the three owners above.
-
-### Reporting
-
-| In scope | Owner |
-|---|---|
-| Google Ads audit report | `$google-ads` |
-| Meta Ads audit report | `$meta-ads` |
-| Diagnostic performance report | `$performance-diagnostics` |
-| Measurement integrity report | `$tracking-measurement` |
-| Scaling review and decision log | `$optimization-scaling` |
-| Cross-channel executive report, scorecard, recurring cadence, stakeholder translation | `$marketing-reporting` |
-
-A bounded single-channel or single-decision report stays owned by the skill that owns that decision. `$marketing-reporting` combines their outputs across channels — it does not perform the underlying audit, diagnosis, reconciliation, growth-priority decision, or economics analysis. Budget and outcome pacing remain owned by `$optimization-scaling`. A recurring process that coordinates specialist decisions, persistent state, approval gates, live-action handoffs, verification, or condition-triggered escalation is `$marketing-operations`, not reporting. Not covered: report-production systems and data-warehouse/dashboard implementation.
+Analytics engineering and BI implementation are governed by $marketing-analytics. Tracking architecture and causal measurement remain with $tracking-measurement; diagnostic interpretation remains with $performance-diagnostics; stakeholder narrative remains with $marketing-reporting.
 
 ## Planned
 
