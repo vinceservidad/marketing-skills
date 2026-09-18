@@ -4,6 +4,17 @@ Notable changes follow semantic versioning.
 
 ## [Unreleased]
 
+### Added - v2 portable Agent Skills distribution
+
+- Adds `scripts/build-portable-skills.py`, which generates self-contained `skills/<name>/` bundles from the canonical `.agents/skills/` source. Each bundle carries the operating contracts and transitive local dependencies required to install that skill independently.
+- Makes `npx skills add vinceservidad/marketing-skills` the primary public installation path, with individual `--skill` selection and installation into Codex, Claude Code, Cursor, Windsurf, GitHub Copilot, OpenCode, and other Agent Skills-compatible runtimes.
+- Adds byte-exact portable-distribution drift checks, portable link validation, generated-manifest coverage, and offline regression tests.
+- Adds CI smoke tests against the real public `skills` CLI for repository discovery, selected Codex installation, and full Claude Code installation.
+- Keeps the existing ownership-aware Python installer as an advanced full-system path with collision protection, backups, and namespaced shared resources.
+- Updates the installer ownership marker from the retired `vinceservidad/full-stack-marketing-os` name to `vinceservidad/marketing-skills`.
+- The generated `skills/` layer is distribution only. It cannot become a second editable source of marketing behavior.
+
+
 ### Added — Complete analytics, integration, and validation boundaries
 
 - Adds `$marketing-analytics` as the governed owner for marketing data contracts, warehouse/pipeline design, semantic metric layers, data quality, BI/dashboard implementation, refresh/backfill governance, lineage, and source-to-output reconciliation. Tracking validity, causal diagnosis, stakeholder reporting, and marketing decisions retain their existing owners.
