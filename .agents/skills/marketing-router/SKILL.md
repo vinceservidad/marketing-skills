@@ -1,6 +1,6 @@
 ---
 name: marketing-router
-description: Route ambiguous or multi-discipline marketing requests to the smallest useful set of Marketing OS skills, identify the current marketing decision-lifecycle stage, and preserve one owner when work spans business-level growth planning, channels, funnel stages, activation, retention, diagnosis, operations, commercial decisions, or deliverables.
+description: Route ambiguous or multi-discipline marketing requests to the smallest useful set of Marketing OS skills, identify the current marketing decision-lifecycle stage, and preserve one owner when work spans business-level growth planning, channels, funnel stages, activation, retention, diagnosis, analytics engineering, operations, commercial decisions, data products, or deliverables.
 ---
 
 # Marketing Router
@@ -80,9 +80,11 @@ Examples of valid starting points:
 - Landing page, product page, pre-conversion form, checkout, or persuasion friction before the conversion boundary: `$cro`.
 - Metric change, spend/sales anomaly, or causal triage: `$performance-diagnostics`.
 - Event integrity, attribution differences, conversion architecture, source reconciliation, incrementality testing, causal evidence grading, experiment validity, experiment learning, or experiment backlog governance: `$tracking-measurement`.
+- Data contracts, warehouse/data models, SQL/dbt transformation design, recurring ingestion pipelines, semantic metric layers, data-quality controls, source-to-model reconciliation, BI datasets, or dashboard implementation: `$marketing-analytics`.
 - Interviews, reviews, surveys, customer language, objections, or evidence synthesis: `$customer-research`.
 - Priority segments, buying situations, buyer roles, Jobs-to-be-Done, competitor landscape, alternatives, or competitive intelligence for positioning decisions: `$icp-jtbd`.
 - Cross-channel executive report, recurring reporting cadence, or stakeholder scorecard combining findings already produced elsewhere: `$marketing-reporting`.
+- If a dashboard request primarily requires building or repairing the underlying dataset, model, refresh pipeline, metric layer, or BI implementation, `$marketing-analytics` owns that data product; `$marketing-reporting` owns the stakeholder narrative after the data layer is governed.
 - Organic search visibility, ranking, content strategy, or technical SEO health: `$seo`.
 - Email, lifecycle, website, sales-page, long-form, or brand copywriting: `$copywriting`.
 - Email or lifecycle program strategy — segmentation, trigger logic, cadence, deliverability: `$lifecycle-marketing`.
@@ -99,6 +101,8 @@ Examples of valid starting points:
 - Customer lifetime value, payback period, cohort retention/churn measurement, repeat/renewal economics, or lead-to-revenue maturation: `$retention-economics`.
 
 Common compositions:
+
+- Build a marketing data warehouse or dashboard: marketing analytics owns source contracts, grains/keys, transformations, metric semantics, quality tests, refresh/backfill behavior, dashboard implementation, and reconciliation; tracking-measurement owns instrumentation/attribution validity; performance-diagnostics owns why metrics changed; marketing-reporting owns recurring stakeholder narrative.
 
 - Build a marketing/growth plan: growth strategy owns the business objective, current constraint structure, opportunity set, strategic bets, non-priorities, sequence, and learning roadmap; specialist skills own the decisions inside each chosen workstream; marketing operations may own recurring execution/review once the strategy is approved; reporting owns stakeholder summaries.
 - “Where should we focus next?”: growth strategy owns the cross-business priority decision; performance diagnostics joins when a recent metric change must be localized; intake joins when economics, definitions, or evidence state are unclear; a channel skill joins only when its feasibility is a distinct dependency.
