@@ -4,6 +4,16 @@ Notable changes follow semantic versioning.
 
 ## [Unreleased]
 
+### Added — Complete analytics, integration, and validation boundaries
+
+- Adds `$marketing-analytics` as the governed owner for marketing data contracts, warehouse/pipeline design, semantic metric layers, data quality, BI/dashboard implementation, refresh/backfill governance, lineage, and source-to-output reconciliation. Tracking validity, causal diagnosis, stakeholder reporting, and marketing decisions retain their existing owners.
+- Adds runtime-neutral `integrations/` contracts and a machine-readable adapter registry that separates documented, configured, authenticated, connected, authorized, and verified states. Repository metadata never implies that a user account is connected.
+- Adds `validation/` for real-world evidence registration with synthetic, anonymized-real, and verified-public classes, publication/privacy rules, and fail-closed truth states. No client result or live connection is fabricated by this change.
+- Adds data-contract, integration-contract, and validation-evidence templates plus `scripts/validate-system-boundaries.py` and CI coverage.
+- Adds a twelve-case marketing analytics evaluation suite covering grain/cardinality, attribution double counting, idempotency, semantic metrics, privacy, reconciliation, mutable history, ownership boundaries, and live-mutation truthfulness.
+- Reclassifies marketplace plugin packaging as optional distribution rather than a missing marketing capability. Host connectors, MCP, APIs, browser/computer tools, warehouses, and BI runtimes may satisfy the integration layer only when their actual runtime connection and authorization state is verified.
+
+
 ### Added — Marketing decision lifecycle
 
 - Adds [`workflows/marketing-decision-lifecycle.md`](workflows/marketing-decision-lifecycle.md), the canonical stateful `CONTEXT → GOAL → STRATEGY → PLAN → EXECUTE → REVIEW → OPTIMIZE ↺` operating lifecycle. It starts at the earliest materially unresolved stage instead of forcing every request through all seven stages, and it can move backward when new evidence invalidates an earlier decision.
