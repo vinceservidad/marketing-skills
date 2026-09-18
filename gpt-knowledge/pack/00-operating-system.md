@@ -33,6 +33,8 @@ rendered as source labels; external URLs and fenced examples are preserved.
 20. Activation must represent first meaningful customer value, not tracking convenience. Do not invent an “aha moment,” use onboarding/tutorial/email completion as value by default, game denominator/window definitions, or shorten necessary qualification/safety/setup just to improve activation rate or time-to-value. Check fit, product/service failure, operations, and measurement before blaming onboarding friction.
 21. Retention interventions must match a diagnosed reason. Separate voluntary loss, involuntary payment loss, lapse, and active risk; do not default to discounts, obstruct cancellation, override consent/suppression, or call delayed cancellation a durable save. Verify continuing value and economics over the decision-relevant window.
 22. Growth strategy must start from a named primary business outcome, baseline, horizon, and evidence-supported limiting condition or constraint set, not a generic channel checklist. Do not force a single binding constraint when evidence supports co-limiting, independent, or unresolved constraints. Do not invent a growth target, fixed planning horizon, priority count, funnel model, channel mix, budget ratio, or benchmark-based opportunity. Preserve specialist ownership, explicit non-priorities, capacity limits, opportunity cost, decision gates, and the boundary that paid-media scaling remains under `$optimization-scaling`.
+23. Marketing analytics engineering belongs to `$marketing-analytics`: declare source authority, grain, keys, join cardinality, metric semantics, time/currency basis, refresh/backfill behavior, privacy, data-quality checks, and source reconciliation before treating a warehouse, pipeline, dataset, or dashboard as trustworthy. A rendered dashboard or successful ETL job is not proof of data correctness, and the data layer does not inherit causal diagnosis or business decisions.
+24. External integrations are adapters, not evidence of access. Keep documented, configured, authenticated, connected, authorized, and verified states distinct; never commit credentials or imply a live account from repository configuration. Material writes require the owning skill, explicit scope authorization, and post-write verification.
 
 ## Skill design
 
@@ -99,31 +101,13 @@ Existence of a document is not coverage. A capability is governed only when a sk
 | Programmatic: supply-path optimization, inventory verification, fraud screening | `$programmatic` |
 | Public relations: media relations, pitch strategy, crisis communications | `$public-relations` |
 | Cross-channel executive reporting, recurring cadence, stakeholder scorecards | `$marketing-reporting` |
+| Marketing analytics engineering: source data contracts, warehouse/pipeline design, conformed models, semantic metric layers, data-quality controls, BI/dashboard implementation, refresh/backfill governance, and source-to-output reconciliation | `$marketing-analytics` |
 
 ## Partially covered
 
-### Analytics
+None currently. Requests outside the governed table must fail closed through the uncovered-request rules below rather than being silently absorbed by a neighboring skill.
 
-| In scope | Owner |
-|---|---|
-| Tracking architecture, event integrity, attribution differences, source reconciliation | `$tracking-measurement` |
-| Performance analysis, segmentation, anomaly diagnosis, competing explanations | `$performance-diagnostics` |
-| Marginal business evidence and paid-media allocation analysis | `$optimization-scaling` |
-
-Not covered: business-intelligence engineering, data-warehouse or pipeline design, dashboard implementation, and analytics deliverables outside the three owners above.
-
-### Reporting
-
-| In scope | Owner |
-|---|---|
-| Google Ads audit report | `$google-ads` |
-| Meta Ads audit report | `$meta-ads` |
-| Diagnostic performance report | `$performance-diagnostics` |
-| Measurement integrity report | `$tracking-measurement` |
-| Scaling review and decision log | `$optimization-scaling` |
-| Cross-channel executive report, scorecard, recurring cadence, stakeholder translation | `$marketing-reporting` |
-
-A bounded single-channel or single-decision report stays owned by the skill that owns that decision. `$marketing-reporting` combines their outputs across channels — it does not perform the underlying audit, diagnosis, reconciliation, growth-priority decision, or economics analysis. Budget and outcome pacing remain owned by `$optimization-scaling`. A recurring process that coordinates specialist decisions, persistent state, approval gates, live-action handoffs, verification, or condition-triggered escalation is `$marketing-operations`, not reporting. Not covered: report-production systems and data-warehouse/dashboard implementation.
+Analytics engineering and BI implementation are governed by $marketing-analytics. Tracking architecture and causal measurement remain with $tracking-measurement; diagnostic interpretation remains with $performance-diagnostics; stakeholder narrative remains with $marketing-reporting.
 
 ## Planned
 
@@ -150,7 +134,7 @@ All previously identified advertising and distribution channels, pricing/monetiz
 
 ---
 name: marketing-router
-description: Route ambiguous or multi-discipline marketing requests to the smallest useful set of Marketing OS skills, identify the current marketing decision-lifecycle stage, and preserve one owner when work spans business-level growth planning, channels, funnel stages, activation, retention, diagnosis, operations, commercial decisions, or deliverables.
+description: Route ambiguous or multi-discipline marketing requests to the smallest useful set of Marketing OS skills, identify the current marketing decision-lifecycle stage, and preserve one owner when work spans business-level growth planning, channels, funnel stages, activation, retention, diagnosis, analytics engineering, operations, commercial decisions, data products, or deliverables.
 ---
 
 # Marketing Router
@@ -230,9 +214,11 @@ Examples of valid starting points:
 - Landing page, product page, pre-conversion form, checkout, or persuasion friction before the conversion boundary: `$cro`.
 - Metric change, spend/sales anomaly, or causal triage: `$performance-diagnostics`.
 - Event integrity, attribution differences, conversion architecture, source reconciliation, incrementality testing, causal evidence grading, experiment validity, experiment learning, or experiment backlog governance: `$tracking-measurement`.
+- Data contracts, warehouse/data models, SQL/dbt transformation design, recurring ingestion pipelines, semantic metric layers, data-quality controls, source-to-model reconciliation, BI datasets, or dashboard implementation: `$marketing-analytics`.
 - Interviews, reviews, surveys, customer language, objections, or evidence synthesis: `$customer-research`.
 - Priority segments, buying situations, buyer roles, Jobs-to-be-Done, competitor landscape, alternatives, or competitive intelligence for positioning decisions: `$icp-jtbd`.
 - Cross-channel executive report, recurring reporting cadence, or stakeholder scorecard combining findings already produced elsewhere: `$marketing-reporting`.
+- If a dashboard request primarily requires building or repairing the underlying dataset, model, refresh pipeline, metric layer, or BI implementation, `$marketing-analytics` owns that data product; `$marketing-reporting` owns the stakeholder narrative after the data layer is governed.
 - Organic search visibility, ranking, content strategy, or technical SEO health: `$seo`.
 - Email, lifecycle, website, sales-page, long-form, or brand copywriting: `$copywriting`.
 - Email or lifecycle program strategy — segmentation, trigger logic, cadence, deliverability: `$lifecycle-marketing`.
@@ -249,6 +235,8 @@ Examples of valid starting points:
 - Customer lifetime value, payback period, cohort retention/churn measurement, repeat/renewal economics, or lead-to-revenue maturation: `$retention-economics`.
 
 Common compositions:
+
+- Build a marketing data warehouse or dashboard: marketing analytics owns source contracts, grains/keys, transformations, metric semantics, quality tests, refresh/backfill behavior, dashboard implementation, and reconciliation; tracking-measurement owns instrumentation/attribution validity; performance-diagnostics owns why metrics changed; marketing-reporting owns recurring stakeholder narrative.
 
 - Build a marketing/growth plan: growth strategy owns the business objective, current constraint structure, opportunity set, strategic bets, non-priorities, sequence, and learning roadmap; specialist skills own the decisions inside each chosen workstream; marketing operations may own recurring execution/review once the strategy is approved; reporting owns stakeholder summaries.
 - “Where should we focus next?”: growth strategy owns the cross-business priority decision; performance diagnostics joins when a recent metric change must be localized; intake joins when economics, definitions, or evidence state are unclear; a channel skill joins only when its feasibility is a distinct dependency.

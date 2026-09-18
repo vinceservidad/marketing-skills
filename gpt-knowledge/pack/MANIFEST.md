@@ -2,7 +2,7 @@
 
 # Pack manifest
 
-19 knowledge files; 30 governed skills; 194 source documents.
+19 knowledge files; 31 governed skills; 202 source documents.
 
 Upload the numbered Markdown files as Knowledge. Paste the instruction body
 from INSTRUCTIONS.md into Instructions. Keep this manifest for provenance.
@@ -26,8 +26,8 @@ define coverage. Export integrity does not prove retrieval or decision quality.
 
 | File | Covers | Skills | Words |
 |---|---|---|---:|
-| `00-operating-system.md` | Operating System and Routing | `$marketing-router` | 5,763 |
-| `01-contracts.md` | Terminology and Governance Contracts | supporting documents | 4,129 |
+| `00-operating-system.md` | Operating System and Routing | `$marketing-router` | 5,854 |
+| `01-contracts.md` | Terminology and Governance Contracts | supporting documents | 5,152 |
 | `02-growth-strategy.md` | Business-Level Growth Strategy | `$growth-strategy` | 3,558 |
 | `03-intake-and-research.md` | Intake, Customer Research, and ICP | `$marketing-intake`, `$customer-research`, `$icp-jtbd` | 6,788 |
 | `04-google-ads.md` | Google Ads | `$google-ads` | 1,336 |
@@ -41,12 +41,12 @@ define coverage. Export integrity does not prove retrieval or decision quality.
 | `12-seo.md` | Search Engine Optimization | `$seo` | 1,993 |
 | `13-lifecycle-marketing.md` | Lifecycle and Email Marketing | `$lifecycle-marketing` | 1,571 |
 | `14-measurement.md` | Tracking, Attribution, and Incrementality | `$tracking-measurement` | 5,627 |
-| `15-diagnostics-reporting-operations.md` | Diagnostics, Reporting, and Operations | `$performance-diagnostics`, `$marketing-reporting`, `$marketing-operations` | 4,851 |
+| `15-diagnostics-reporting-operations.md` | Analytics, Diagnostics, Reporting, and Operations | `$marketing-analytics`, `$performance-diagnostics`, `$marketing-reporting`, `$marketing-operations` | 6,891 |
 | `16-activation-and-retention.md` | Activation, Retention, and Customer Economics | `$activation`, `$retention-strategy`, `$retention-economics` | 8,321 |
 | `17-optimization-scaling.md` | Optimization and Scaling | `$optimization-scaling` | 3,230 |
-| `18-supporting-library.md` | Frameworks, Playbooks, Workflows, and Templates | supporting documents | 15,833 |
+| `18-supporting-library.md` | Frameworks, Playbooks, Workflows, and Templates | supporting documents | 16,272 |
 
-**Total: 93,804 words.**
+**Total: 97,397 words.**
 
 ## Source inventory
 
@@ -99,6 +99,9 @@ SHA-256 hashes refer to original source bytes before local-link presentation cha
 | `.agents/skills/linkedin-ads/SKILL.md` | `07-b2b-and-programmatic.md` | `dad856a6538d05a948df9b6e8e2a32b9a589aed6db9d646ad292452baf9cf7fc` |
 | `.agents/skills/linkedin-ads/references/account-and-firmographic-targeting.md` | `07-b2b-and-programmatic.md` | `c769f9ad4a0bf84b1345ae124c973dab680cb867c114ea9b64e660091c106754` |
 | `.agents/skills/linkedin-ads/references/lead-quality-and-sales-cycle.md` | `07-b2b-and-programmatic.md` | `8ac4929d99d38c8e2976730a11e2fc44ba6346c2b7c03f781a3f485576e5d7b4` |
+| `.agents/skills/marketing-analytics/SKILL.md` | `15-diagnostics-reporting-operations.md` | `e86928fc3b433d96c013b5217288bac54f56382f6277b3adbae6b064444330c7` |
+| `.agents/skills/marketing-analytics/references/data-contracts-and-modeling.md` | `15-diagnostics-reporting-operations.md` | `29e95c81d6d2fc895f356bbd64c15b9a5922890d5990bcef37472db279a071b4` |
+| `.agents/skills/marketing-analytics/references/pipelines-quality-and-dashboarding.md` | `15-diagnostics-reporting-operations.md` | `72522a0b9ea338c693afa6004c7a2481ce12e36898effa7bd20912103483abad` |
 | `.agents/skills/marketing-intake/SKILL.md` | `03-intake-and-research.md` | `7f45838d574f6375aa6b65e9e75a4a5a0b9e6ec5599c89f8b29b3ec028ae1695` |
 | `.agents/skills/marketing-intake/references/access-and-data-request.md` | `03-intake-and-research.md` | `55455b4b40cecfba6e68e31d58b6f3092805e243d82bbddd35597447a1a884cf` |
 | `.agents/skills/marketing-intake/references/authorization-register.md` | `03-intake-and-research.md` | `a39b8a3604138c4a0c447d22218f0b96280d1613d326da7e483d97876108fae6` |
@@ -113,7 +116,7 @@ SHA-256 hashes refer to original source bytes before local-link presentation cha
 | `.agents/skills/marketing-reporting/references/cadence-and-governance.md` | `15-diagnostics-reporting-operations.md` | `b5ee534e262dc4f531555c360741af1d89d8bf90a5609687d7b2574be26ae33b` |
 | `.agents/skills/marketing-reporting/references/scorecard-construction.md` | `15-diagnostics-reporting-operations.md` | `cf85c3f26631f6414ad8bb94dc12f5b0b960c0ee2550571b00ad77d05ad1fde2` |
 | `.agents/skills/marketing-reporting/references/stakeholder-communication.md` | `15-diagnostics-reporting-operations.md` | `305095f70fbce7b86393a3ef1dfe386f5beef74d4f7c9ef4b2655967fd8d8463` |
-| `.agents/skills/marketing-router/SKILL.md` | `00-operating-system.md` | `2a8b55d240c751f73eb01cb43da2cea13f47ea43ec76c15266deb4428f7d4905` |
+| `.agents/skills/marketing-router/SKILL.md` | `00-operating-system.md` | `effe81702265a5c4a098e152533f0b724c03c4f32ee1f192de877eac8c6f6366` |
 | `.agents/skills/meta-ads/SKILL.md` | `05-meta-ads.md` | `43f2ee60ed4cfe3ffec1f4cdbc4f15e04aa921ef1b02a7fd6e89859975429086` |
 | `.agents/skills/meta-ads/references/platform-current.md` | `05-meta-ads.md` | `f1b7f52a7d062c9f56465067ec8d3ae8b02321061cc6687b6a35aa666b5d886e` |
 | `.agents/skills/meta-ads/references/prospecting.md` | `05-meta-ads.md` | `3793d8297832c097457d86e5d54da85941617f94f9c32abaffd695762e01c7e4` |
@@ -179,9 +182,9 @@ SHA-256 hashes refer to original source bytes before local-link presentation cha
 | `.agents/skills/youtube-ads/SKILL.md` | `06-video-and-social-ads.md` | `d078837a34d1ac549b6d6da3695022b482fcaf0824a6035f685f7be0095a3928` |
 | `.agents/skills/youtube-ads/references/format-selection.md` | `06-video-and-social-ads.md` | `7ecc871557b4eb87038122eb7b37c4666ec82c0307f2aacbb400afc84433de83` |
 | `.agents/skills/youtube-ads/references/measurement-fit.md` | `06-video-and-social-ads.md` | `c04d4d3453999b3fff9c611b9018979986f3f90c00b3028cfe8d835e0633843b` |
-| `AGENTS.md` | `00-operating-system.md` | `f65699e2e5df481aaa04a9700118c0715bacd8c25f7600d2596a43c19a0e358a` |
-| `ARTIFACT-OWNERSHIP.md` | `01-contracts.md` | `06875d343c1b3f969f0b7e5b232f5798356b614bc57038ee55fc35c97191c3ca` |
-| `CAPABILITY-REGISTRY.md` | `00-operating-system.md` | `f554a7437bb9563159df09847f2530c0bf93b5fbddc9368b94ba7032d9d7aa19` |
+| `AGENTS.md` | `00-operating-system.md` | `a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3` |
+| `ARTIFACT-OWNERSHIP.md` | `01-contracts.md` | `cf0904ffead4c8f2750fd296b26f6c965acef5ae3d9af15f1441fe3bc372d7bc` |
+| `CAPABILITY-REGISTRY.md` | `00-operating-system.md` | `f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0` |
 | `GLOSSARY.md` | `01-contracts.md` | `ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e` |
 | `KNOWLEDGE-TAXONOMY.md` | `01-contracts.md` | `421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9` |
 | `PLATFORM-CURRENCY.md` | `01-contracts.md` | `487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc` |
@@ -198,6 +201,7 @@ SHA-256 hashes refer to original source bytes before local-link presentation cha
 | `frameworks/scaling-mode-selector.md` | `18-supporting-library.md` | `0e4b69e4bececea8da38d3d45409943036ec9e212bb77822d86ab392e28b021f` |
 | `frameworks/scaling-proof-standard.md` | `18-supporting-library.md` | `7b59d7abf80d009404b0dd38b8379327b4ed0369cdf6794d2b356eeb6b1d7a96` |
 | `frameworks/shopify-cro.md` | `18-supporting-library.md` | `78148f661ea8d76fec36db8a20fef2762e70d7b4dbe76f25a9e901852ab78f6a` |
+| `integrations/README.md` | `01-contracts.md` | `60ac338e20ce9152e23b9359feeebd836edfd870e2ca62312f470ccc4d861362` |
 | `playbooks/README.md` | `18-supporting-library.md` | `49fad3a51f41e4bcf6f79be71fc5f6d52cf6d83786af422fd76a50837b08621a` |
 | `playbooks/creative-scaling.md` | `18-supporting-library.md` | `71c6f9e6d08f799afda5c8befd5a51f45dbeac2e566bb361b9f81f6d46539315` |
 | `playbooks/cross-channel-diagnostic.md` | `18-supporting-library.md` | `23afea79d273769e18101eac1608a2448055f813599e148d7a07a240f5c6efab` |
@@ -221,10 +225,12 @@ SHA-256 hashes refer to original source bytes before local-link presentation cha
 | `templates/de-scaling-plan.md` | `18-supporting-library.md` | `2153e07bdd8ddae4326d25f613625031b2b26f79cdd7e1a51a16a61651919c58` |
 | `templates/experiment-learning.md` | `18-supporting-library.md` | `e1205ee99da2ed528ce829e1c3f099ae5221d2ae03cb806c86644d1218bf9a5b` |
 | `templates/experiment.md` | `18-supporting-library.md` | `1357f57922ccee7c02bcec28d7d7f382cc16e2d602bf6a3fa67f430015be2af3` |
+| `templates/integration-contract.md` | `18-supporting-library.md` | `86afac39c9cfb59a90465302b7cef6b8a081426d13029b1b15b72890c996045b` |
 | `templates/knowledge-artifact.md` | `18-supporting-library.md` | `a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015` |
 | `templates/landing-page-review.md` | `18-supporting-library.md` | `558e4ae2732f57cee9ae275a255b4e9ea9acc603dc3e570f4ddb6f1708307e04` |
 | `templates/marketing-audit.md` | `18-supporting-library.md` | `6206945a2c02b46801423ceaf2aa7b9cd0475dc95864af57ede9868c34a9c636` |
 | `templates/marketing-context.md` | `18-supporting-library.md` | `79cf4214453e500e0320c5d1e1b919109f050b14ce27c97f915de43ce5d3d284` |
+| `templates/marketing-data-contract.md` | `18-supporting-library.md` | `3f324a40e6da1fc3261b98ded96b67f61c319792ffe88244620c8d9ba39131dc` |
 | `templates/marketing-decision-record.md` | `18-supporting-library.md` | `a6e6518e2cdcbcced2fea838112d8ddfcadf8d7bcb4c3988bb5b662b3122b578` |
 | `templates/marketing-loop.md` | `18-supporting-library.md` | `a45f4d04575baeef30b966249b9839f2cb5ea9dc5c57276fd3fd7f2719729a80` |
 | `templates/performance-report.md` | `18-supporting-library.md` | `7dfa9a9ed0ccea423d88e2e896d6f51f6a464bdc3f34339c4466a5951dd06450` |
@@ -239,6 +245,8 @@ SHA-256 hashes refer to original source bytes before local-link presentation cha
 | `templates/scaling-hypothesis.md` | `18-supporting-library.md` | `c881ef1c7c6357ab0116ea59495f8652f4c46f9d08b5a19f04310bc99af173dc` |
 | `templates/scaling-portfolio-review.md` | `18-supporting-library.md` | `5bfc20ae47d5e4da90363d53c018e559b7bca0b7244e9457cb0c20eef99f60d8` |
 | `templates/strategy-template.md` | `18-supporting-library.md` | `a550d43a32965db40e16a112ac6d8f228074e70f240963f0670365f6aae64bdf` |
+| `templates/validation-evidence-record.md` | `18-supporting-library.md` | `18daf9391b86a8e4c8fb3b058ef84a739b3c7936b9db17ac8839bebf3938d45d` |
+| `validation/README.md` | `01-contracts.md` | `fa9e385b662e9bd44ca34a9a36ac9e3d465d7869f8e1fa572c441baffa5e7f0e` |
 | `workflows/README.md` | `18-supporting-library.md` | `c6d569c9912b0c1523f40e037e9b2d2a9f108c4db52f36ee79353ea17ff8cfa2` |
 | `workflows/creative-ideation-engine.md` | `18-supporting-library.md` | `81652529eb09ec51ad3aa4410bb396c5078adb2c9c93b7633bf09b8edaaaae67` |
 | `workflows/creative-testing.md` | `18-supporting-library.md` | `e91a9d340ab19e990bf216838c837c146f4e05ee53cf954c66b61944ac05b608` |
