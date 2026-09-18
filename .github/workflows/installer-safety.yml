@@ -138,9 +138,9 @@ jobs:
             -a claude-code \
             -y
           canonical_count=$(find .agents/skills -mindepth 2 -maxdepth 2 -name SKILL.md -type f | wc -l | tr -d ' ')
-          installed_count=$(find "$isolated_home/.agents/skills" -mindepth 2 -maxdepth 2 -name SKILL.md -type f | wc -l | tr -d ' ')
+          installed_count=$(find "$isolated_home/.claude/skills" -mindepth 2 -maxdepth 2 -name SKILL.md -type f | wc -l | tr -d ' ')
           test "$installed_count" -eq "$canonical_count"
-          test -f "$isolated_home/.agents/skills/marketing-router/_shared/AGENTS.md"
+          test -f "$isolated_home/.claude/skills/marketing-router/_shared/AGENTS.md"
           HOME="$isolated_home" npx --yes skills@latest list -g -a claude-code | tee "$RUNNER_TEMP/claude-installed.txt"
           grep -q 'marketing-router' "$RUNNER_TEMP/claude-installed.txt"
           grep -q 'google-ads' "$RUNNER_TEMP/claude-installed.txt"
