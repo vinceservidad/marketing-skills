@@ -22,3 +22,6 @@ node_modules/
 # Unreviewed evaluation responses and scorecards stay local.
 tests/results/
 tests/.eval-cache/
+
+.DS_Store
+**/.DS_Store
