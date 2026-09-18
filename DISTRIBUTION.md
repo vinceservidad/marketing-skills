@@ -1,10 +1,10 @@
 # Cross-Agent Distribution
 
-Full-Stack Marketing OS is a **portable skill and marketing operating system**, not currently a packaged marketplace plugin.
+Full-Stack Marketing OS is a **portable skill and marketing operating system** with a governed runtime-neutral integration contract. A marketplace plugin is an optional distribution wrapper, not a prerequisite for system completeness.
 
-The canonical source of behavior is always [`.agents/skills/`](.agents/skills/). Runtime installs, knowledge exports, and future plugin packages are distribution layers. They must not become competing sources of truth.
+The canonical source of behavior is always [`.agents/skills/`](.agents/skills/). Runtime installs, knowledge exports, host integrations, and optional plugin packages are distribution layers. They must not become competing sources of truth.
 
-Platform notes below were verified against current OpenAI and Anthropic documentation on **2026-09-01**. Reverify platform-specific packaging and paths before changing this contract.
+Platform notes below were verified against current OpenAI and Anthropic documentation on **2026-09-18**. Reverify platform-specific packaging and paths before changing this contract.
 
 ## Current support matrix
 
@@ -14,14 +14,17 @@ Platform notes below were verified against current OpenAI and Anthropic document
 | Claude Code | **Supported as skills** | `bash scripts/install-claude-skills.sh` → `~/.claude/skills/` | No, generated from `.agents/skills/` |
 | Claude Code repo instructions | **Supported** | Root `CLAUDE.md` imports `AGENTS.md` | Bridge only |
 | Custom GPT knowledge | **Supported as derived knowledge** | Generated `gpt-knowledge/pack/` | No, non-executable export |
-| ChatGPT/OpenAI installable plugin | **Not packaged yet** | Future plugin package may bundle skills and optional connectors/MCP/UI | No |
-| Claude installable plugin | **Not packaged yet** | Future Claude plugin may bundle skills and optional agents/hooks/MCP | No |
+| Host connectors / MCP / APIs / browser / BI runtimes | **Supported through integration contract** | [`integrations/README.md`](integrations/README.md) + runtime-specific connection | No |
+| ChatGPT/OpenAI marketplace plugin | **Optional distribution** | May package the governed skills and reference approved apps/connectors; not required for core completeness | No |
+| Claude plugin | **Optional distribution** | May package the governed skills and MCP/agent surfaces; not required for core completeness | No |
 
 ## Terminology
 
 Use **skill** when referring to a reusable task/workflow instruction package.
 
 Use **plugin** only when an actual installable plugin package/manifest exists for the target platform. A repository containing skills is not automatically a plugin.
+
+Use [`integrations/README.md`](integrations/README.md) for the live-data/action contract. A documented adapter is not a connected account; connection, authorization, and verification are runtime-specific states.
 
 Use **Custom GPT knowledge export** for `gpt-knowledge/`. Knowledge files can inform a GPT but do not become governed executable skills merely because they are uploaded.
 
@@ -39,7 +42,7 @@ The installer copies canonical skills into the runtime's `skills/` directory and
 
 Same-name unmanaged skills and locally modified managed files stop the install. Identical reinstalls are a no-op; changed managed installations are backed up. Python 3 is required, and `--dry-run` validates without changing the runtime. See [`INSTALLATION_SAFETY.md`](INSTALLATION_SAFETY.md) for ownership, legacy migration, backups, and recovery limits.
 
-The repository is **not yet an OpenAI plugin package**. Do not describe it as published, installed, marketplace-listed, or plugin-enabled unless a real package has been created and verified in the target OpenAI environment.
+The repository does not rely on an all-in-one OpenAI plugin for completeness. OpenAI plugins can package skills and connected apps, while app authorization remains separate. If this repository is packaged later, do not describe that package as published, installed, marketplace-listed, connected, or verified until the target workspace confirms those states.
 
 ## Claude Code
 
@@ -55,7 +58,7 @@ This delegates to the same canonical installer and writes generated skills to `~
 
 When Claude Code works inside this repository, root [`CLAUDE.md`](CLAUDE.md) imports [`AGENTS.md`](AGENTS.md), so contributor and evidence rules remain shared rather than duplicated.
 
-Local personal skills are not the same as a Claude plugin or a cloud-distributed skill. Do not claim Claude plugin/cloud installation unless that distribution has actually been configured and verified.
+Local personal skills are not the same as a Claude plugin or a cloud-distributed skill. Plugin packaging remains optional; do not claim Claude plugin/cloud installation unless that distribution has actually been configured and verified.
 
 ## Custom GPT
 
@@ -74,14 +77,14 @@ Install/export/package
       ├─ ~/.codex/skills/ + ~/.codex/.marketing-os/
       ├─ ~/.claude/skills/ + ~/.claude/.marketing-os/
       ├─ gpt-knowledge/
-      └─ future plugin packages
+      └─ optional plugin packages
 ```
 
 Never edit a generated runtime copy and then treat it as the new source of truth.
 
-## Future plugin packaging
+## Optional plugin packaging
 
-A future plugin release should be treated as a separate distribution milestone, not a rename of the repository. Before calling a package a plugin:
+A plugin release is a separate optional distribution artifact, not a missing capability and not a rename of the repository. Before calling a package a plugin:
 
 1. Create the target platform's required package/manifest structure.
 2. Bundle only governed skills and explicitly required resources/tools.
