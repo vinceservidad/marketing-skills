@@ -2,7 +2,7 @@
 
 This file describes the current maturity state and next system-level milestones. Historical implementation details live in [`CHANGELOG.md`](CHANGELOG.md); capability ownership lives in [`CAPABILITY-REGISTRY.md`](CAPABILITY-REGISTRY.md).
 
-Last reconciled: **2026-09-06**.
+Last reconciled: **2026-09-18**.
 
 ## Current state — Governed full-stack Marketing OS
 
@@ -16,7 +16,7 @@ Completed capability areas include:
 - creative strategy, copywriting, CRO, static DTC creative direction, and governed 4:5 → centered 1:1 cross-crop safety
 - activation, retention strategy, retention economics, and lifecycle marketing
 - tracking/measurement, experiment learning, performance diagnostics, marketing reporting, marketing operations, and optimization/scaling
-- cross-agent distribution for Codex and Claude Code from one canonical skill source
+- generated self-contained Agent Skills distribution for Codex, Claude Code, Cursor, Windsurf, GitHub Copilot, OpenCode, and other compatible runtimes from one canonical skill source
 - public GitHub onboarding and truth-governed worked-example standards
 
 The capability registry remains authoritative. Marketing analytics engineering is now governed end to end by `$marketing-analytics`, including data contracts, warehouse/pipeline design, metric layers, data quality, BI/dashboard implementation, refresh/backfill governance, and reconciliation. Tracking validity, diagnostic interpretation, reporting narrative, and marketing decisions retain their specialist owners.
@@ -62,6 +62,8 @@ The capability registry remains authoritative. Marketing analytics engineering i
 ### Distribution and usability
 
 - `.agents/skills/` remains the canonical skill source.
+- `skills/` is a generated portable distribution layer with byte-exact drift checks; it is never hand-maintained.
+- The public `npx skills` path is smoke-tested against actual Codex and Claude Code install targets.
 - Codex and Claude Code installers generate runtime copies without creating competing skill hierarchies, protect personal files, and keep shared resources in `.marketing-os/`.
 - The GPT reference pack is generated from current canonical sources and checked for drift.
 - Evaluation cases have executable static validation and an opt-in model-grading harness with offline regression tests. These do not establish a live behavioral pass rate.
