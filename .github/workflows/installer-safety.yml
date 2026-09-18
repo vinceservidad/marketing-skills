@@ -9,6 +9,9 @@ on:
       - '.agents/skills/**'
       - 'scripts/install-skills.*'
       - 'scripts/install-claude-skills.sh'
+      - 'scripts/build-portable-skills.py'
+      - 'skills/**'
+      - 'tests/test_portable_skills.py'
       - 'scripts/validate-skill-architecture.sh'
       - 'scripts/validate-agent-distribution.sh'
       - 'tests/test_install_*.py'
@@ -83,3 +86,58 @@ jobs:
           HOME="$isolated_home" bash scripts/install-claude-skills.sh .
           grep -Fxq 'Personal Claude instructions' "$isolated_home/.claude/CLAUDE.md"
           test -f "$isolated_home/.claude/skills/marketing-router/SKILL.md"
+
+  agent-skills-cli:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Portable distribution is current
+        run: python3 scripts/build-portable-skills.py --check
+      - name: List skills through public Agent Skills CLI
+        shell: bash
+        run: |
+          set -euo pipefail
+          npx --yes skills@latest add "$GITHUB_WORKSPACE" --list | tee "$RUNNER_TEMP/skills-list.txt"
+          grep -q 'marketing-router' "$RUNNER_TEMP/skills-list.txt"
+          grep -q 'google-ads' "$RUNNER_TEMP/skills-list.txt"
+          grep -q 'marketing-analytics' "$RUNNER_TEMP/skills-list.txt"
+      - name: Install selected portable skills into Codex
+        shell: bash
+        run: |
+          set -euo pipefail
+          isolated_home="$RUNNER_TEMP/skills-cli-codex-home"
+          mkdir -p "$isolated_home"
+          HOME="$isolated_home" npx --yes skills@latest add "$GITHUB_WORKSPACE" \
+            --skill marketing-router \
+            --skill google-ads \
+            -g \
+            -a codex \
+            --copy \
+            -y
+          test -f "$isolated_home/.codex/skills/marketing-router/SKILL.md"
+          test -f "$isolated_home/.codex/skills/marketing-router/_shared/AGENTS.md"
+          test -f "$isolated_home/.codex/skills/google-ads/SKILL.md"
+          test -f "$isolated_home/.codex/skills/google-ads/_shared/AGENTS.md"
+      - name: Install all portable skills into Claude Code
+        shell: bash
+        run: |
+          set -euo pipefail
+          isolated_home="$RUNNER_TEMP/skills-cli-claude-home"
+          mkdir -p "$isolated_home"
+          HOME="$isolated_home" npx --yes skills@latest add "$GITHUB_WORKSPACE" \
+            --skill '*' \
+            -g \
+            -a claude-code \
+            --copy \
+            -y
+          canonical_count=$(find .agents/skills -mindepth 2 -maxdepth 2 -name SKILL.md -type f | wc -l | tr -d ' ')
+          installed_count=$(find "$isolated_home/.claude/skills" -mindepth 2 -maxdepth 2 -name SKILL.md -type f | wc -l | tr -d ' ')
+          test "$installed_count" -eq "$canonical_count"
+          test -f "$isolated_home/.claude/skills/marketing-router/_shared/AGENTS.md"
+          printf 'Agent Skills CLI installed %s portable skills.\n' "$installed_count"
