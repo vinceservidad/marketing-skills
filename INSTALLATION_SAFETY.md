@@ -1,5 +1,28 @@
 # Safe installation and updates
 
+There are two supported installation paths.
+
+## Public portable install
+
+For most users:
+
+```bash
+npx skills add vinceservidad/marketing-skills
+```
+
+The public CLI installs generated self-contained bundles from `skills/`. Each bundle includes the shared rules and linked dependencies required by that skill. These bundles are generated from `.agents/skills/` and checked for drift in CI.
+
+Use the CLI's own update/remove commands for installs it manages:
+
+```bash
+npx skills update
+npx skills remove google-ads
+```
+
+## Advanced managed install
+
+The repository's custom installer provides stricter ownership tracking, collision protection, namespaced shared resources, repeat-install verification, and backups.
+
 The installer writes generated skills to `<runtime>/skills/<name>/` and shared Marketing OS contracts and libraries to `<runtime>/.marketing-os/`. It never writes global `AGENTS.md` or `CLAUDE.md`, and never replaces runtime-root `frameworks/`, `playbooks/`, `templates/`, or `workflows/` directories.
 
 Each generated skill links explicitly to `.marketing-os/AGENTS.md`. The repository's operating rules remain available without replacing the user's personal or project instructions. Canonical source stays in `.agents/skills/`; generated copies are not a second source of truth.
@@ -48,6 +71,6 @@ Run the isolated regression suites:
 python3 -m unittest discover -s tests -p 'test_install_*.py' -v
 ```
 
-The `Installer safety` workflow runs the safety and link-rewriting suites, a full-repository installation, a repeat-install check, installed-runtime integrity validation, and the Claude wrapper using temporary runtimes on Ubuntu and macOS. The skill-link check covers this package's generated skill files and their references, not every link in all repository documentation. These tests validate installation mechanics, not model decision quality or live agent discovery.
+The `Installer safety` workflow runs the safety and link-rewriting suites, a full-repository managed installation, a repeat-install check, installed-runtime integrity validation, the Claude wrapper on Ubuntu and macOS, and a separate smoke test using the real public `skills` CLI. The skill-link check covers this package's generated skill files and their references, not every link in all repository documentation. These tests validate installation mechanics, not model decision quality or live agent discovery.
 
 This is a focused reliability change. It does not add skills, generate GPT exports, merge PR #27, or claim a measured improvement in marketing outcomes. PR #27 must preserve this installation-safety contract when its broader distribution work is reconciled.

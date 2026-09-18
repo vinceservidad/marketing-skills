@@ -1,0 +1,556 @@
+{
+  "canonical_source": ".agents/skills",
+  "generated": true,
+  "schema_version": 1,
+  "skill_count": 31,
+  "skills": {
+    "activation": {
+      "file_count": 11,
+      "files": {
+        "SKILL.md": "feca3cfac0166428a9b6580ea087d766623dd7186f87668c96e6d8b30f96dc07",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/activation-plan.md": "59cbfe75781daee74d4855ef612935e4f488246791285f394fa77c9815ae3b0e",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "references/activation-definition-and-evidence.md": "82d5db5185da2d79737a0c2cd90ee2c10c5eb13c2442d178a839d04c138bc03f",
+        "references/activation-experiments-and-handoffs.md": "0377367b3446dee087edca42936db4115973450452aa7de28f33a30c9f001387",
+        "references/path-to-value-and-friction.md": "37f546f860c2bc77130a8ae0d8e71b2e4b2d3a58316f3c25d036d2b4c42f270d"
+      },
+      "source": ".agents/skills/activation"
+    },
+    "affiliate-marketing": {
+      "file_count": 9,
+      "files": {
+        "SKILL.md": "2e1cd9444926498cecc8c2539235e51cf3339b121e168793b08854fe5d0f587f",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "references/attribution-integrity.md": "d92d83d71ca5c9c4a57f1f7cf8f8acb4f0f8e7c9ef8521d36324a6200a834dc8",
+        "references/fraud-and-brand-bidding-detection.md": "85487ff1b9abaa0f9bffca61b57f702e0ece3e83abfe5d6e57a2a7c15c19b36f"
+      },
+      "source": ".agents/skills/affiliate-marketing"
+    },
+    "copywriting": {
+      "file_count": 8,
+      "files": {
+        "SKILL.md": "85fa6fe1f625e3dd349f5307a85f16779c7d5172c26c37185dc2d53ecbb8b740",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "references/structure-selection.md": "2f9577f2c84f97ca23a53a4b578f1a15693a7d406228773fa574628e393f81ba"
+      },
+      "source": ".agents/skills/copywriting"
+    },
+    "creative-strategy": {
+      "file_count": 22,
+      "files": {
+        "SKILL.md": "ba37cc6e61a8afa04be90894ba413ba9a027c4975de798edec4341aaf8756e76",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/frameworks/creative-strategy.md": "3e53d06a106a89f4a6426a9ecee004ea90b0bd6d1fa942801f659251b5e8eeea",
+        "_shared/templates/creative-brief.md": "34f4a4520df6179cfcf149c6b5fe1cf90112cbadd78cdea8a295a3bb90266248",
+        "_shared/templates/creative-idea-matrix.md": "627b5ab014f87491ac8c27150663b9c0365f002cd0e27cc854e4697d0ed9a54d",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "_shared/workflows/creative-ideation-engine.md": "81652529eb09ec51ad3aa4410bb396c5078adb2c9c93b7633bf09b8edaaaae67",
+        "_shared/workflows/creative-testing.md": "e91a9d340ab19e990bf216838c837c146f4e05ee53cf954c66b61944ac05b608",
+        "references/angle-catalog-and-hook-types.md": "ec8f96a4b5328cd3ac47b677c2550c255224b15dc96e2c30363a40b8653a3567",
+        "references/awareness-belief-desire-map.md": "fbdf581c6628d6015624e3ecf00bff76ea9701c8c00776c0f244da4ffb6c8aea",
+        "references/creative-mechanics.md": "45c9c8172ae9c1a10d47b223020bbaf68e670b6bfd09e3fc0c4f9968b9bb1549",
+        "references/hook-execution.md": "37b6c5c53e5073bbfe302ec83aff9dfeb607ceee12b0249fa217547cbab84c4b",
+        "references/ideation-expansion-method.md": "ded0673b31d6f6f0f302dc8afa16188909d34186c50ab0acf4943a6c0c487d0a",
+        "references/iterating-from-a-winner.md": "f4a55127f50b93c8279e052a5c6f4b0ccbc08899acde7d007dd15642b2e4b487",
+        "references/persuasion-and-behavioral-principles.md": "c0c4f5f70ac8a08613696b6e7b473dacc6216b318720514eea9733c0cce0a3b6",
+        "references/static-dtc-creative-direction.md": "3776d9c8f4e9a69bdd24522db068d43a94e13aeb3a1a6200ec386255cf78375a",
+        "references/strategic-framing-and-angle-archetypes.md": "16c37039c4ec0252a767a11e8a45af38a4702370edc31e8f201e5b3b34210175",
+        "references/visual-format-selection.md": "6bd16c66ab7f85043faa3997461c4cd0aae127a8986b1f5cf66fe910c94c7dd9"
+      },
+      "source": ".agents/skills/creative-strategy"
+    },
+    "cro": {
+      "file_count": 12,
+      "files": {
+        "SKILL.md": "6d3f9ec72ecdd32a6d385cfe3e2ab459d7793359fddadcdab0da29de8247ddb2",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/frameworks/shopify-cro.md": "78148f661ea8d76fec36db8a20fef2762e70d7b4dbe76f25a9e901852ab78f6a",
+        "_shared/playbooks/ecommerce-growth.md": "bbbe9abf429bcd4e17bfc1d55978d350eb3a537fb41bddb3d8abbbb3e3544e60",
+        "_shared/playbooks/ecommerce.md": "7541ebfc575cb04523d74a252cac0e6d4965b646d277e9060f92e5bc3ba9cfa5",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "_shared/templates/landing-page-review.md": "558e4ae2732f57cee9ae275a255b4e9ea9acc603dc3e570f4ddb6f1708307e04",
+        "_shared/workflows/cro-improvement.md": "77bcfb5e546c1ea14400c311454580153a47a669ad55a882b368ca5df4124a76"
+      },
+      "source": ".agents/skills/cro"
+    },
+    "customer-research": {
+      "file_count": 10,
+      "files": {
+        "SKILL.md": "8693a59ff432ea2a462e9518ada709845c86bbbb3575a87020140b69a994760b",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "references/interview-synthesis.md": "b783fe8a401aa1e47f716276982ad6e73e083473303ca5ae531d00dad4792caf",
+        "references/review-mining-for-creative.md": "271245e384b9169f55fce73b94c9fbad85faa2c82b2bac7c1eedcd202e32e9be",
+        "references/source-grading.md": "591d91deff81eaa10ec0471bcab6c92c1028ef08ffb6b5a570a8f10acbcc765b"
+      },
+      "source": ".agents/skills/customer-research"
+    },
+    "google-ads": {
+      "file_count": 15,
+      "files": {
+        "SKILL.md": "009f7d5b4944ae90faae2e62cb79921cdbf1f16d43e9dfbccf46a3d4355da7be",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/frameworks/google-ads-full-stack.md": "f160411195134cb46895de988e22ee2d7d9541d005ff8f5752c4d4cdf96d097f",
+        "_shared/playbooks/google-ads-audit.md": "677591637897b2b7209f1287cf7276e1c7495fe056bf291019b1fb454805bc4e",
+        "_shared/templates/campaign-brief.md": "e0b7070006c8d1c4d36927b2997d7c7f8a4a8f101e9fb46032be36126a9095e9",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "_shared/workflows/google-ads-optimization.md": "c84df0cea3a2f42d28d9eb33ff3556e4c32807b72319d831f9f0606180be6dcb",
+        "references/platform-current.md": "4b1ae47767fcdc143d3495edd70fd8cdca8ae51fb29720f2e32309f854b0e308",
+        "references/pmax.md": "92f2de3a62dc5f9dead08cfc79bd4a9de815804994051524befb92af3069a8fa",
+        "references/search.md": "ab1439184904fbd21430f5c72164b23aa4c098a14ae0cd592866b23e7cf8917f",
+        "references/shopping.md": "53e35b63ce98b979373506d9b584ecbe733f48835aafaa422507476b6fc322f6"
+      },
+      "source": ".agents/skills/google-ads"
+    },
+    "growth-strategy": {
+      "file_count": 11,
+      "files": {
+        "SKILL.md": "7c60962d66ed8a9f938ce124017052979ee1f441f70940b32ae918bfe08b67d5",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "_shared/templates/strategy-template.md": "a550d43a32965db40e16a112ac6d8f228074e70f240963f0670365f6aae64bdf",
+        "references/growth-constraint-and-opportunity.md": "dae9e36b46cfb069fb88c8fdb6e904adc9f298fe7a3456d3e110a75c80295e59",
+        "references/plan-governance-and-review.md": "95a2251902ded22e5657c78b7883e12aae33731e3d596e08882759f00a55c1d0",
+        "references/portfolio-prioritization-and-sequencing.md": "13c6ff16a6fe5463b05241aeef438f1a7166bf489bcae2b6cbab237f8c42db8d"
+      },
+      "source": ".agents/skills/growth-strategy"
+    },
+    "icp-jtbd": {
+      "file_count": 10,
+      "files": {
+        "SKILL.md": "4758942e078ffd7b13c82477ab2bb8c777c423a3eba41ff0d404748c236d5495",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/playbooks/lead-generation.md": "d9d5c347da912f1f0df68f1d3fe182498bc7ab84d9818ef61adaf9b18e95470f",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "_shared/templates/marketing-audit.md": "6206945a2c02b46801423ceaf2aa7b9cd0475dc95864af57ede9868c34a9c636",
+        "references/competitive-intelligence.md": "5ec71cc43a19a32fbad7c79bfc2caa74b6113831c0dfa10a948b259b5c6a7092"
+      },
+      "source": ".agents/skills/icp-jtbd"
+    },
+    "influencer-marketing": {
+      "file_count": 9,
+      "files": {
+        "SKILL.md": "7dca89c9796b884fba822bb3240dae347c5c9b969237b0ec19ffc214373134d7",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "references/audience-authenticity-and-fit.md": "d24f483ae41c28fa9d3bc51b74a6ec1dc15aec82c66b929f690b95f802860300",
+        "references/compensation-structure.md": "0146d1c8ae79a868db3c4d63da220e2264f7dc1460f2d0d32edf85ed80acda1c"
+      },
+      "source": ".agents/skills/influencer-marketing"
+    },
+    "lifecycle-marketing": {
+      "file_count": 9,
+      "files": {
+        "SKILL.md": "3ebf51287a6da026bef8bf130a5f43fb2c0b8a59f45e52a3794bfaf31b60ce3f",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "references/deliverability.md": "8786544b9baeaba9850d1805c0ef885e32f8b8e4f270003383298f9d2485e525",
+        "references/segmentation-and-triggers.md": "8e5736cec8d73a3514709c5556cf6cd3b1eb9b52c7d187f7f314f90222da5c43"
+      },
+      "source": ".agents/skills/lifecycle-marketing"
+    },
+    "linkedin-ads": {
+      "file_count": 9,
+      "files": {
+        "SKILL.md": "30668348b3fb467a78e98e2a9ea3e54161e4e9de71a4fc3fc1d2fbdf932a548b",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "references/account-and-firmographic-targeting.md": "c769f9ad4a0bf84b1345ae124c973dab680cb867c114ea9b64e660091c106754",
+        "references/lead-quality-and-sales-cycle.md": "8ac4929d99d38c8e2976730a11e2fc44ba6346c2b7c03f781a3f485576e5d7b4"
+      },
+      "source": ".agents/skills/linkedin-ads"
+    },
+    "marketing-analytics": {
+      "file_count": 9,
+      "files": {
+        "SKILL.md": "bc4506a7f8bbc770dc278469695c6c0402379b3e69446b25815f7b265bdc01c6",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "references/data-contracts-and-modeling.md": "29e95c81d6d2fc895f356bbd64c15b9a5922890d5990bcef37472db279a071b4",
+        "references/pipelines-quality-and-dashboarding.md": "72522a0b9ea338c693afa6004c7a2481ce12e36898effa7bd20912103483abad"
+      },
+      "source": ".agents/skills/marketing-analytics"
+    },
+    "marketing-intake": {
+      "file_count": 14,
+      "files": {
+        "SKILL.md": "5f684451a0e71aa90d3e4f41311e1e285009f15dcb6fa94443383f4f623bdf76",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "_shared/templates/marketing-context.md": "79cf4214453e500e0320c5d1e1b919109f050b14ce27c97f915de43ce5d3d284",
+        "references/access-and-data-request.md": "55455b4b40cecfba6e68e31d58b6f3092805e243d82bbddd35597447a1a884cf",
+        "references/authorization-register.md": "a39b8a3604138c4a0c447d22218f0b96280d1613d326da7e483d97876108fae6",
+        "references/engagement-context.md": "8d760c9cafdcc5ae1fb7aeea8def48271881e8fe77be308244c681f23166bc7d",
+        "references/evidence-register.md": "6b7a874854cc1f3071f6deb67696bc40edae4f17954e3bec5332bc0db68b0993",
+        "references/marketing-context-governance.md": "4a006e966cd4c418d085e44d6fb80aa12a0579e48878068844ad9c56b4d025da",
+        "references/metric-definition-register.md": "8a56a94e8928fdb11f5c39c2ef3d65e48cc13af2f73d4f94d8f101d872352b6c"
+      },
+      "source": ".agents/skills/marketing-intake"
+    },
+    "marketing-operations": {
+      "file_count": 11,
+      "files": {
+        "SKILL.md": "bfa71bfa8fac172bf5d49cd7e0d4e21b239c1a3cb92457ae3a2dc2bce0eef460",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "_shared/templates/marketing-loop.md": "a45f4d04575baeef30b966249b9839f2cb5ea9dc5c57276fd3fd7f2719729a80",
+        "_shared/workflows/marketing-operations-loop.md": "7a8f2e47104fee2e415f8e4b72bd40923dfb2889157b2c037ac95d88b0f22048",
+        "references/loop-design-and-governance.md": "c3528b8bca0a2bff1e79053b14c9c049bf420e35269f2ef597569b2855468f73",
+        "references/loop-state-idempotency-and-escalation.md": "07ed8558cf385ad60b5084d57adb1a16e194e2d443ac3bc75a0ed21ffde25c32"
+      },
+      "source": ".agents/skills/marketing-operations"
+    },
+    "marketing-reporting": {
+      "file_count": 12,
+      "files": {
+        "SKILL.md": "ad51a5aea398cafa35e5981bc6193951020a40ec9dcfb82a739680db2d846e67",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "_shared/templates/performance-report.md": "7dfa9a9ed0ccea423d88e2e896d6f51f6a464bdc3f34339c4466a5951dd06450",
+        "_shared/workflows/reporting-analysis.md": "b8dc3e94a4b9764fbb13a94cfae9a7bcbfa067c50330441f191171d6d2025e6b",
+        "references/cadence-and-governance.md": "b5ee534e262dc4f531555c360741af1d89d8bf90a5609687d7b2574be26ae33b",
+        "references/scorecard-construction.md": "cf85c3f26631f6414ad8bb94dc12f5b0b960c0ee2550571b00ad77d05ad1fde2",
+        "references/stakeholder-communication.md": "305095f70fbce7b86393a3ef1dfe386f5beef74d4f7c9ef4b2655967fd8d8463"
+      },
+      "source": ".agents/skills/marketing-reporting"
+    },
+    "marketing-router": {
+      "file_count": 10,
+      "files": {
+        "SKILL.md": "6d31c89ec2e610984b7f144e5b351d549b7e9b8b6519e65b4326147554321513",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "_shared/templates/marketing-decision-record.md": "a6e6518e2cdcbcced2fea838112d8ddfcadf8d7bcb4c3988bb5b662b3122b578",
+        "_shared/workflows/marketing-decision-lifecycle.md": "c5894d318dac82eef2d827e9654fd84ff4ce3b6f7d5b4b387604ff1ec652d0d8",
+        "_shared/workflows/marketing-operations-loop.md": "7a8f2e47104fee2e415f8e4b72bd40923dfb2889157b2c037ac95d88b0f22048"
+      },
+      "source": ".agents/skills/marketing-router"
+    },
+    "meta-ads": {
+      "file_count": 14,
+      "files": {
+        "SKILL.md": "203a01fde005e09df6b6b3600c4e19c2d738e775e626af781f346255fd8f8460",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/frameworks/meta-ads-full-stack.md": "7a8c6fc3273197537a9891d91907f6f79fce1ba3cb2471968a5e2490d5968945",
+        "_shared/playbooks/meta-ads-audit.md": "4048976496b5ecf85530b8846d0dc6cc6ace9e396c3d67c0f2bb03f476515dc6",
+        "_shared/templates/campaign-brief.md": "e0b7070006c8d1c4d36927b2997d7c7f8a4a8f101e9fb46032be36126a9095e9",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "_shared/workflows/meta-ads-optimization.md": "f98f4c6a064671e6bf46cc8184ff7296b67dcebbf24a98ae6fcc4601858f2c41",
+        "references/platform-current.md": "f1b7f52a7d062c9f56465067ec8d3ae8b02321061cc6687b6a35aa666b5d886e",
+        "references/prospecting.md": "3793d8297832c097457d86e5d54da85941617f94f9c32abaffd695762e01c7e4",
+        "references/retargeting.md": "ab112a98f865194eb33588b58ee9ba43f75c392ec1ea5e2576ed17dd72357d5e"
+      },
+      "source": ".agents/skills/meta-ads"
+    },
+    "offer-strategy": {
+      "file_count": 10,
+      "files": {
+        "SKILL.md": "1cbaf5aee9d30ca31023102b4bc4dac13fd5b70422dd4c1b0e26a332792a56a2",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "references/offer-architecture.md": "2aa4932141c686f876dee8362814ce0600f82677ea65d12f38bb9c120fb403d8",
+        "references/offer-diagnosis.md": "f4d6a8e359e9bb5c2bc1cf06e355a4a818724e03fb8c2e50cfcf7af23a148473",
+        "references/risk-reversal-and-urgency.md": "4b9abfcadff9bb2d0eb803f4a181584615af85a565241643da2b4d1797f67249"
+      },
+      "source": ".agents/skills/offer-strategy"
+    },
+    "optimization-scaling": {
+      "file_count": 20,
+      "files": {
+        "SKILL.md": "52b8a13e88914ac75571579239b5122b9d01b138d1cf4259b87c2d167a572278",
+        "_shared/.agents/skills/tracking-measurement/references/causal-evidence-ladder.md": "0a50e7fe3f19076ce1bb317168381ff26cdccf2cebe9e710ea537b1e1fdb679e",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "references/budget-and-outcome-pacing.md": "210a77c2184b390f7d59bf293d372a783efbfed02ffabd0e7eb70f7f43a279c3",
+        "references/business-overlays.md": "ff5072995ed0a0a0d1450f272ebb48b7d0d8eacd8846a6c318f16400f72c306a",
+        "references/constraints-and-modes.md": "b73798c5c37f38993b257f177e5be25982bc18988caa0d3533c0b3acb0ea1445",
+        "references/controlled-steps.md": "b040d79b1cc202af18581ceccf7bda85f1989e3f118823208dcdb8b60a063f7a",
+        "references/creative-capacity.md": "aecd713136e56dba016b56c4d6016c472ef5789b78ebb980dc10481c4ae7a573",
+        "references/economics.md": "6b37b1468c324368289a0bd95618788e5e01e9024b2e7a93aa9362ce0542cea0",
+        "references/google-scaling.md": "e555f2bf6a391dc2b90c4c70737a5ea12987b456ea06833300576b1cdb12e9ae",
+        "references/guardrails-and-recovery.md": "86e2f2bedcc098829d7de5cfe74f34692e591f0c424968b5d5ad82a8ec517084",
+        "references/meta-scaling.md": "dcb9a16e37f2fe74a7a58f8064f685f36aae2105d9b32d22d1632effdd609052",
+        "references/portfolio-allocation.md": "fffd89e3b84f2436840fb403547da34f99c48a4f0a8e48be9e164ca037091b01",
+        "references/proof-standard.md": "66188b82defc88c42981316234e0788c96fc3cc18e764506b7a04cf7c8b49253",
+        "references/readiness.md": "8b80390f311b94341ea2df646096df943dde379d20d8c0af0db2c9321d028351"
+      },
+      "source": ".agents/skills/optimization-scaling"
+    },
+    "organic-social": {
+      "file_count": 9,
+      "files": {
+        "SKILL.md": "4422d09f576a8625c2e30bc9a1698b9a502f830702ecd89bc5531b82d6e2fbd2",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "references/algorithm-distribution-fit.md": "c455af700aa300845e9507216aed5106ed422693e72e4b600d55d32ea6869b3e",
+        "references/cadence-and-community-management.md": "c64081353dfaf072c8442e142f03f3fbcd6d3cbca4ede4b944fc2b79492b900e"
+      },
+      "source": ".agents/skills/organic-social"
+    },
+    "performance-diagnostics": {
+      "file_count": 9,
+      "files": {
+        "SKILL.md": "364da0787dc72e4e348ab3267541bd8d8593b448e79146b1862144096dd6cf9e",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/playbooks/cross-channel-diagnostic.md": "23afea79d273769e18101eac1608a2448055f813599e148d7a07a240f5c6efab",
+        "_shared/templates/audit.md": "3f44fae4d5a4383333dc2d041f66bd22e9c71a861b7c86f6c76046e5311c2530",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015"
+      },
+      "source": ".agents/skills/performance-diagnostics"
+    },
+    "pricing-monetization": {
+      "file_count": 11,
+      "files": {
+        "SKILL.md": "e50346288caf9ce7f4053e28c7b1b0e8805813ad978a483b03e6594c7633eb77",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "_shared/templates/pricing-decision.md": "3c21d4cdbf48983c00e7be248a221dd06d5d70be64eebdeba34927796120b42e",
+        "references/price-change-testing-and-rollout.md": "e4290d0a2b911e40697cdfcaf4fa98aec088779fd705181cb98ec866babf8a2d",
+        "references/pricing-architecture.md": "4d7cdb4662187d67d81c7ea57971c28f4665023625afb3539286f53ecae327bc",
+        "references/willingness-to-pay-evidence.md": "9882b9449bea3da4ec6f49b757ac401dd8c132515e934140f3b6849e63508e99"
+      },
+      "source": ".agents/skills/pricing-monetization"
+    },
+    "programmatic": {
+      "file_count": 9,
+      "files": {
+        "SKILL.md": "2c1de668f727135ddc8031414e481400d29d57ae6ac355e39db59f46cf4b84be",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "references/supply-path-optimization.md": "62e609ba6683158bbf63ecf3aa43b6b1077a1390e7fa36d998a9e5bd5e5c4b4b",
+        "references/verification-and-fraud-screening.md": "80142793e9979a76606a39a6c7949a766e4be3b4dec6a56bceef45b09cd5e9f9"
+      },
+      "source": ".agents/skills/programmatic"
+    },
+    "public-relations": {
+      "file_count": 9,
+      "files": {
+        "SKILL.md": "928e005a936f64060c16b6deb90b111fd6c3e4ee7125b3d6f835451f9306f533",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "references/crisis-communications.md": "10eb84057864efa3e09df91118360a039ba6cc0076168461516a1ce7e6bd24d1",
+        "references/measurement-and-evidence-limits.md": "53a14813d3346e7254a904da8638ad294679ba726733188a2581d0d98368a7b6"
+      },
+      "source": ".agents/skills/public-relations"
+    },
+    "retention-economics": {
+      "file_count": 19,
+      "files": {
+        "SKILL.md": "d6b36c1257d777d706d9d54d197d9c23fb7a6069eb8d202b865b4ecf1b3470f2",
+        "_shared/.agents/skills/marketing-intake/SKILL.md": "7f45838d574f6375aa6b65e9e75a4a5a0b9e6ec5599c89f8b29b3ec028ae1695",
+        "_shared/.agents/skills/marketing-intake/references/access-and-data-request.md": "55455b4b40cecfba6e68e31d58b6f3092805e243d82bbddd35597447a1a884cf",
+        "_shared/.agents/skills/marketing-intake/references/authorization-register.md": "a39b8a3604138c4a0c447d22218f0b96280d1613d326da7e483d97876108fae6",
+        "_shared/.agents/skills/marketing-intake/references/engagement-context.md": "8d760c9cafdcc5ae1fb7aeea8def48271881e8fe77be308244c681f23166bc7d",
+        "_shared/.agents/skills/marketing-intake/references/evidence-register.md": "6b7a874854cc1f3071f6deb67696bc40edae4f17954e3bec5332bc0db68b0993",
+        "_shared/.agents/skills/marketing-intake/references/marketing-context-governance.md": "2d774554af05aa948ca15863e977a79ed3c2a8dce0887f7a7091c31f09b304a5",
+        "_shared/.agents/skills/marketing-intake/references/metric-definition-register.md": "db0d9f5889e8b15095f0b24e71dde6ec6e122951ee95490a5d89e8e71f765cdb",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "_shared/templates/marketing-context.md": "79cf4214453e500e0320c5d1e1b919109f050b14ce27c97f915de43ce5d3d284",
+        "references/cohort-and-retention-analysis.md": "8095a0539e9e52e1a93510aa3323b60a99953a94f772975a72499da06560ccb4",
+        "references/customer-lifetime-value.md": "4a7a403e0f74f2ae60d9e26e7d4db847b3a9a7710c8911ca3cd4341040d48966",
+        "references/lead-to-revenue-cohorts.md": "a286c25d031ac935159419e635d021829e93cea5ff6425ed170fda74ed1e0c68",
+        "references/payback-period.md": "022b63f44a1b2a122b88d9fe64fc916575333b1762903a6f1dbdd42f3f9da803"
+      },
+      "source": ".agents/skills/retention-economics"
+    },
+    "retention-strategy": {
+      "file_count": 11,
+      "files": {
+        "SKILL.md": "8444817f37979a92be9ce4eea5fc177cabf68e6d066cbf2ecf1aee2bf450fae0",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "_shared/templates/retention-strategy-plan.md": "f87d3b4e01e1c553a323a61b62ce4870560cb0fc4b7914f2a473900ad6d7b397",
+        "references/intervention-selection-and-save-recovery.md": "b1836605bf7a87f9cdc28b494cd82eeb5411e81440d095ab9aabe32655bdd2c3",
+        "references/repeat-renewal-and-winback.md": "43393d2b04dbca39add27ce521964e6cfb549b3a7610b0cf2d52925067d505ac",
+        "references/retention-diagnosis-and-reason-coding.md": "7bda918038b7f1d6daea1f5ac12738792202b3279af13e491dca8049a932c1db"
+      },
+      "source": ".agents/skills/retention-strategy"
+    },
+    "seo": {
+      "file_count": 10,
+      "files": {
+        "SKILL.md": "71842c75e614b6314eb8762d1771a68031e759d48c0d3ed31662ccaee8680d7b",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "references/content-and-topic-strategy.md": "2f1b76d48ec692da58d6cf3aea87d9a44ee1de580bb4412e8535b34252761367",
+        "references/ranking-change-diagnosis.md": "25b75ea4317e15ae138878ae6ac4855c10ac656cda11fb5a14d2bb3e94e34ea9",
+        "references/technical-health.md": "0af2d6ad267477c1798a0f23d350c5f2e4582eaf69682600727daabcc5f124fa"
+      },
+      "source": ".agents/skills/seo"
+    },
+    "tiktok-ads": {
+      "file_count": 9,
+      "files": {
+        "SKILL.md": "c7aa944ba0f42879253ebd139489b2f0b69fa34ee54455d9031e5b7b81a5ace1",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "references/creative-fatigue-and-refresh-cadence.md": "40291b3cde58a819ce5a37e22e1ff2e61a62f020e321a680585468755df260f3",
+        "references/native-creative-fit.md": "59ac7f4bef7e2f59b4881526115bd5ced490c8b21dd6e9bb7584906798bf1c53"
+      },
+      "source": ".agents/skills/tiktok-ads"
+    },
+    "tracking-measurement": {
+      "file_count": 21,
+      "files": {
+        "SKILL.md": "6c88ecb42e933f92ccc47f95872e250e1cf1ddd3fae865bbcb5d857b261e3238",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/frameworks/experimentation.md": "2e1677c2518dbac7ea3ca6bbecf94172b68a2505b74d2f31c10b0de90de7d4e6",
+        "_shared/frameworks/measurement-and-evidence.md": "c204fcac8fc212f2d6913c6be2ce0e33835f00181fa33d63181f5248002b6c42",
+        "_shared/templates/experiment-learning.md": "e1205ee99da2ed528ce829e1c3f099ae5221d2ae03cb806c86644d1218bf9a5b",
+        "_shared/templates/experiment.md": "1357f57922ccee7c02bcec28d7d7f382cc16e2d602bf6a3fa67f430015be2af3",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "references/attribution-reconciliation.md": "e60e35a32fb3ecfa02a8d3f9f74f2afa1d8e67102c9c489b0dbf0ba8cf47be96",
+        "references/causal-evidence-ladder.md": "a8a382f11db51a97e648b3e1f8bbd11d5d91e96a538108b03872022f6bb09d50",
+        "references/event-integrity.md": "08f9867ec95d19cf9c792ebe4e214c3bef9903a6582c8a4b7ac5419b61a22feb",
+        "references/experiment-learning-system.md": "a0de8403889fe7a93f9254087a549b922d5f2d9c8015c48069d130bc86cd9d9d",
+        "references/geo-experiments.md": "4ce222ce90a73d43e5c303d1657f9983fef4ad22c949f9ece0239e0535488144",
+        "references/holdout-experiments.md": "77a9d01cfe3363114423a38ed991d65f2a7f656855e0c1ce54acacc63f99299a",
+        "references/incrementality-method-selector.md": "2d983762c1254201777c88cb32bec1b6057da43a066224858b31dcdd800da4db",
+        "references/marketing-mix-modeling.md": "57bd30883c60fc8ac6d1b320c36ac69b04116e26c33f706654e2530c6da73941",
+        "references/measurement-triangulation.md": "070ca30b847bacac4143822f52bb7df261e00aada27599a8c71bf3b52c21d907",
+        "references/platform-lift-studies.md": "a7b299f442d6063176da6db395cd74c0ba5f4d8f747f0b05d85f209c48be4ce8"
+      },
+      "source": ".agents/skills/tracking-measurement"
+    },
+    "youtube-ads": {
+      "file_count": 10,
+      "files": {
+        "SKILL.md": "4dd5f5254ebd21d2a94b10a5d5392e82d5e9fcdc8c43532bf75578485a69f9d0",
+        "_shared/.agents/skills/tracking-measurement/references/platform-lift-studies.md": "a7b299f442d6063176da6db395cd74c0ba5f4d8f747f0b05d85f209c48be4ce8",
+        "_shared/AGENTS.md": "a21231eb51fad6fb5bcc3a70a8d920e3ad8e44fe568fbd8f665d37e98c72c9d3",
+        "_shared/CAPABILITY-REGISTRY.md": "f4b936eab5f84b2dc4d5482030c6d51c233910a18d858f1d412b1419dc0c6fd0",
+        "_shared/GLOSSARY.md": "ea5ea272240df1406d37df06c1b06f699eb2de8e5de83e1a4ea2dbaab03fcb3e",
+        "_shared/KNOWLEDGE-TAXONOMY.md": "421f077096cd7c91e84b58e973bded7dc53bad38d7759f82ad05afe3a7a7d4f9",
+        "_shared/PLATFORM-CURRENCY.md": "487ad17c56e4580a8139942532dda5ad2867be3c61c810661436f787dc6655cc",
+        "_shared/templates/knowledge-artifact.md": "a666770a22d5a87eb256d8b11bed95076f805e658a941d170e49ff784321b015",
+        "references/format-selection.md": "7ecc871557b4eb87038122eb7b37c4666ec82c0307f2aacbb400afc84433de83",
+        "references/measurement-fit.md": "7194e75101dca255342f14448e5a46205d67806bc4c13b0e232dd1b8fdf7e2fe"
+      },
+      "source": ".agents/skills/youtube-ads"
+    }
+  }
+}

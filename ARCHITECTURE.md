@@ -30,7 +30,7 @@ The system has one canonical skill source and several runtime/export layers. Run
 | `~/.codex/skills/` | Local Codex runtime copy | Yes | Generated from canonical, never edited as source |
 | `~/.claude/skills/` | Local Claude Code personal-skill copy | Yes | Generated from canonical, never edited as source |
 | `CLAUDE.md` | Claude Code project-instruction bridge to `AGENTS.md` | Instructions, not a skill layer | Compatibility bridge |
-| `skills/` | Compatibility/index layer | No | Must contain no competing instructions |
+| `skills/` | Generated self-contained portable Agent Skills bundles | Yes, through compatible Agent Skills runtimes/CLI | Generated from canonical; never edited as source |
 | `frameworks/` | Shared decision artifacts | Loaded by governed skills | Governed knowledge library |
 | `playbooks/` | Scenario-specific workflows | Loaded by governed skills | Governed knowledge library |
 | `templates/` | Reusable deliverable structures | Loaded by governed skills | Governed artifact library |
@@ -86,6 +86,17 @@ Behavioral and quality checks that reduce unsupported assumptions, ownership dri
 
 ## Runtime installation
 
+### Agent Skills-compatible runtimes
+
+`scripts/build-portable-skills.py` generates self-contained bundles under `skills/<name>/`. Each bundle contains the canonical skill plus only the shared contracts and linked dependencies required for that skill. The generated layer exists so tools such as the open `skills` CLI can install one skill independently:
+
+```bash
+npx skills add vinceservidad/marketing-skills --skill google-ads
+```
+
+Repository discovery finds `skills/` before `.agents/skills/`, so public installers consume the generated portable copy while canonical editing remains under `.agents/skills/`. CI performs byte-exact drift validation.
+
+
 ### Codex
 
 `scripts/install-skills.sh` defaults to `~/.codex` and installs generated skill copies plus the contracts/libraries their relative links require.
@@ -122,7 +133,7 @@ Every substantial active marketing artifact must have an identifiable owner, a d
 
 `scripts/eval.py --static` validates evaluation-case parsing, suite registration, governed owner references, and selected claim patterns. Offline tests check the harness itself; live model grading is opt-in and must retain response and source evidence. Static checks and synthetic examples are not behavioral results. See [`evaluations/README.md`](evaluations/README.md).
 
-Generated runtime copies must never be edited into a competing owner layer. Change the canonical artifact, validate it, then reinstall/export.
+Generated portable bundles and runtime copies must never be edited into a competing owner layer. Change the canonical artifact, rebuild, validate, then reinstall/export.
 
 ## Design principles
 

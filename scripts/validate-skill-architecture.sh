@@ -156,24 +156,43 @@ def walk(directory):
             yield child
 
 
+portable = repo / "skills"
+portable_manifest = portable / "PORTABLE-MANIFEST.json"
+
 for candidate in walk(repo):
     if candidate.name != "SKILL.md":
         continue
     if skills_dir in candidate.parents:
         continue
-    fail(f"SKILL.md outside the canonical layer: {rel(candidate)}")
-
-legacy = repo / "skills"
-if legacy.is_dir():
-    for stray in legacy.iterdir():
-        if stray.name == "README.md":
+    if portable in candidate.parents:
+        # The portable generator may include linked SKILL.md files from another
+        # governed skill under <bundle>/_shared/. They are dependencies, not
+        # separately discoverable top-level skills. Byte-exact drift validation
+        # runs before this validator in CI.
+        relative = candidate.relative_to(portable)
+        if len(relative.parts) >= 2 and relative.parts[0] in names:
+            bundle_root = portable / relative.parts[0] / "SKILL.md"
+            if not bundle_root.is_file():
+                fail(f"Portable bundle has no root SKILL.md: {rel(candidate)}")
+                continue
+            root_text = bundle_root.read_text(encoding="utf-8")
+            if "GENERATED PORTABLE SKILL" not in root_text:
+                fail(f"Portable bundle is not marked generated: {rel(bundle_root)}")
+                continue
             continue
-        fail(f"'skills/' must contain only README.md; found {rel(stray)}")
+    fail(f"SKILL.md outside the canonical or generated portable layer: {rel(candidate)}")
 
-for name in names:
-    for impostor in (legacy / f"{name}.md", legacy / name / "SKILL.md"):
-        if impostor.exists():
-            fail(f"Competing definition of canonical skill '{name}': {rel(impostor)}")
+if portable.is_dir():
+    allowed = {"README.md", "PORTABLE-MANIFEST.json", *names}
+    for stray in portable.iterdir():
+        if stray.name not in allowed:
+            fail(f"Unmanaged file in generated skills distribution: {rel(stray)}")
+    if not portable_manifest.is_file():
+        fail("Missing skills/PORTABLE-MANIFEST.json; rebuild portable skills.")
+    for name in names:
+        generated = portable / name / "SKILL.md"
+        if not generated.is_file():
+            fail(f"Missing generated portable skill: {rel(generated)}")
 
 # --- Documentation must name the canonical layer -------------------------------
 

@@ -1,60 +1,130 @@
-# Skills — index only (not an execution layer)
+# Portable Marketing Skills
 
-This directory is a **compatibility index**. It contains no executable skills and no operating instructions.
+This directory is the **generated distribution layer** for Agent Skills-compatible runtimes and the `npx skills` CLI.
 
-## Canonical source
-
-Executable, governed operating skills live in:
+The only canonical editable skill source remains:
 
 ```text
 .agents/skills/
 ```
 
-That is the only canonical skill layer. Local runtime copies at `~/.codex/skills/` and `~/.claude/skills/` are generated from the canonical source, with shared resources in each runtime's `.marketing-os/` directory. Never edit those copies as source. See [`INSTALLATION_SAFETY.md`](../INSTALLATION_SAFETY.md).
+Do not hand-edit generated skill folders under `skills/`. Change the canonical skill in `.agents/skills/`, then rebuild:
 
-Capability status — governed, partially covered, planned, or unsupported — is declared in [`CAPABILITY-REGISTRY.md`](../CAPABILITY-REGISTRY.md).
+```bash
+python3 scripts/build-portable-skills.py
+```
 
-## Governed skills
+CI checks that the generated distribution has not drifted.
 
-| Skill | Scope |
-|---|---|
-| [`marketing-router`](../.agents/skills/marketing-router/) | Routes ambiguous or multi-discipline requests; appoints one owner |
-| [`marketing-intake`](../.agents/skills/marketing-intake/) | Engagement scope, evidence grading, metric definitions, access, authorization |
-| [`google-ads`](../.agents/skills/google-ads/) | Search, Shopping, Performance Max audit, diagnosis, change planning |
-| [`meta-ads`](../.agents/skills/meta-ads/) | Structure, audiences, delivery, placements, prospecting, retargeting |
-| [`creative-strategy`](../.agents/skills/creative-strategy/) | Angles, hooks, concepts, formats, briefs, creative tests |
-| [`cro`](../.agents/skills/cro/) | Landing page, product page, form, checkout, persuasion friction |
-| [`performance-diagnostics`](../.agents/skills/performance-diagnostics/) | Metric change, spend/sales anomaly, causal triage |
-| [`tracking-measurement`](../.agents/skills/tracking-measurement/) | Event integrity, attribution reconciliation, conversion architecture |
-| [`customer-research`](../.agents/skills/customer-research/) | Interviews, reviews, surveys, customer language, evidence synthesis |
-| [`icp-jtbd`](../.agents/skills/icp-jtbd/) | Priority segments, buying situations, buyer roles, Jobs-to-be-Done |
-| [`optimization-scaling`](../.agents/skills/optimization-scaling/) | Scale readiness, marginal economics, portfolio allocation, de-scaling, budget/outcome pacing |
-| [`retention-economics`](../.agents/skills/retention-economics/) | Lifetime value, payback period, cohort retention, churn, lead-to-revenue cohorts |
-| [`marketing-reporting`](../.agents/skills/marketing-reporting/) | Cross-channel executive report, recurring cadence, stakeholder scorecard |
-| [`seo`](../.agents/skills/seo/) | Organic visibility audit, technical health, content strategy, ranking-change diagnosis |
-| [`copywriting`](../.agents/skills/copywriting/) | Email, lifecycle, website, sales-page, long-form, brand copywriting |
-| [`lifecycle-marketing`](../.agents/skills/lifecycle-marketing/) | Email/lifecycle segmentation, trigger logic, cadence, deliverability |
-| [`youtube-ads`](../.agents/skills/youtube-ads/) | YouTube video ad format, targeting, view-through measurement fit |
-| [`tiktok-ads`](../.agents/skills/tiktok-ads/) | TikTok native creative fit, Spark Ads vs in-feed, creative-fatigue cadence |
-| [`linkedin-ads`](../.agents/skills/linkedin-ads/) | LinkedIn account/firmographic targeting, format selection, Lead Gen Forms, B2B economics |
-| [`influencer-marketing`](../.agents/skills/influencer-marketing/) | Influencer/creator vetting, compensation structure, usage rights, disclosure compliance |
-| [`affiliate-marketing`](../.agents/skills/affiliate-marketing/) | Affiliate commission structure, attribution integrity, fraud/brand-bidding screening |
-| [`organic-social`](../.agents/skills/organic-social/) | Organic content strategy, cadence, algorithm-distribution fit, community management |
-| [`programmatic`](../.agents/skills/programmatic/) | Supply-path optimization, inventory verification, fraud screening |
-| [`public-relations`](../.agents/skills/public-relations/) | Media relations, pitch strategy, crisis communications |
+## Install in one command
 
-## Skill structure
+Install Marketing Skills with the open Agent Skills CLI:
 
-Every canonical skill is a directory containing `SKILL.md` with YAML frontmatter (`name`, `description`), and optional `references/` for conditional detail loaded only when relevant.
+```bash
+npx skills add vinceservidad/marketing-skills
+```
 
-Each `SKILL.md` must supply a discriminating trigger description, required context, method, decision rules, output contract, and quality assurance — per `AGENTS.md`.
+List available skills first:
+
+```bash
+npx skills add vinceservidad/marketing-skills --list
+```
+
+Install specific skills:
+
+```bash
+npx skills add vinceservidad/marketing-skills \
+  --skill google-ads \
+  --skill meta-ads \
+  --skill creative-strategy
+```
+
+Install all skills globally for Codex:
+
+```bash
+npx skills add vinceservidad/marketing-skills \
+  --skill '*' \
+  -g \
+  -a codex \
+  -y
+```
+
+Install all skills globally for Claude Code:
+
+```bash
+npx skills add vinceservidad/marketing-skills \
+  --skill '*' \
+  -g \
+  -a claude-code \
+  -y
+```
+
+The `skills` CLI also supports other compatible agents such as Cursor, Windsurf, GitHub Copilot, OpenCode, Gemini CLI, Cline, Roo, Warp, and others.
+
+## Use one skill without installing
+
+```bash
+npx skills use vinceservidad/marketing-skills \
+  --skill google-ads \
+  --agent codex
+```
+
+## Why the generated bundles exist
+
+Canonical Marketing Skills share operating contracts, frameworks, workflows, and templates. A user who installs only one skill still needs the dependencies that make that skill behave correctly.
+
+Each generated portable bundle therefore contains:
+
+```text
+skills/<skill>/
+  SKILL.md
+  references/...
+  _shared/
+    AGENTS.md
+    GLOSSARY.md
+    KNOWLEDGE-TAXONOMY.md
+    PLATFORM-CURRENCY.md
+    CAPABILITY-REGISTRY.md
+    ...only additional linked dependencies needed by that skill
+```
+
+This makes each installed skill self-contained without creating another editable source of truth.
+
+## Full system or one skill?
+
+For a focused task, install a single skill:
+
+```bash
+npx skills add vinceservidad/marketing-skills --skill google-ads
+```
+
+For the full operating system, install everything and use `$marketing-router` when you are not sure which specialist should own the request.
+
+## Distribution contract
+
+```text
+.agents/skills/
+      ↓
+canonical governed source
+      ↓
+scripts/build-portable-skills.py
+      ↓
+skills/
+      ↓
+npx skills
+      ↓
+Codex / Claude Code / Cursor / Windsurf / Copilot / OpenCode / other compatible agents
+```
+
+The portable layer may contain repeated shared files by design. Those copies exist so individual skill installation works independently. They are generated and must never be maintained manually.
 
 ## Validation
 
-`scripts/validate-skill-architecture.sh` enforces packaging, unique names, folder/frontmatter agreement, reference reachability, and the prohibition on any file outside `.agents/skills/` impersonating a canonical skill.
+Run:
 
-## Proposing a skill
+```bash
+python3 scripts/build-portable-skills.py --check
+python3 -m unittest tests.test_portable_skills -v
+```
 
-Open a skill proposal issue. New capabilities must arrive as governed skills in `.agents/skills/`, not as Markdown added here.
-
-Historical v1.0 placeholders are retained in [`docs/archive/legacy-skill-stubs/`](../docs/archive/legacy-skill-stubs/) for release history only.
+The repository's normal CI also validates canonical architecture, generated distribution drift, installer safety, links, evaluations, and GPT knowledge exports.

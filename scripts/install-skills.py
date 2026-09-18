@@ -13,7 +13,7 @@ import sys
 import tempfile
 import uuid
 
-OWNER = "vinceservidad/full-stack-marketing-os"
+OWNER = "vinceservidad/marketing-skills"
 NAMESPACE = ".marketing-os"
 MANIFEST = "manifest.json"
 CONTRACTS = (
