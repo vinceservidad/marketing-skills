@@ -9,19 +9,14 @@ Thumbs.db
 .env
 .env.*
 !.env.example
-
 # Local scratch and logs
 work/
 *.log
-
 # Python and Node dependencies
 __pycache__/
 *.py[cod]
 node_modules/
-
 # Unreviewed evaluation responses and scorecards stay local.
 tests/results/
 tests/.eval-cache/
-
-.DS_Store
 **/.DS_Store
