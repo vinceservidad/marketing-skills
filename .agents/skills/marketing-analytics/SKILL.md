@@ -111,7 +111,7 @@ Return the smallest useful combination of:
 - implementation state
 - unresolved risks
 
-Use references/data-contracts-and-modeling.md for schema and metric-layer design and references/pipelines-quality-and-dashboarding.md for pipeline, quality, and BI implementation rules.
+Use [`references/data-contracts-and-modeling.md`](references/data-contracts-and-modeling.md) for schema and metric-layer design and [`references/pipelines-quality-and-dashboarding.md`](references/pipelines-quality-and-dashboarding.md) for pipeline, quality, and BI implementation rules.
 
 ## QA
 
