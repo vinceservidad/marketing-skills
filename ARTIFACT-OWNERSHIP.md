@@ -84,6 +84,9 @@ Status definitions:
 | `performance-report.md` | owned | `$marketing-reporting` (linked from SKILL.md) — canonical report format |
 | `reporting-template.md` | archived | Weaker duplicate of `performance-report.md`; moved to `docs/archive/legacy-skill-stubs/reporting-template.flat.md` |
 | `strategy-template.md` | owned | `$growth-strategy` (linked from SKILL.md) — integrated business-level growth strategy, opportunity portfolio, sequencing, learning, and review record |
+| `marketing-data-contract.md` | owned | `$marketing-analytics` — source authority, grain/keys, metric semantics, model contract, data quality, privacy, and reconciliation |
+| `integration-contract.md` | consumed | `integrations/README.md` — runtime/tool connection, permission, mutation, verification, rollback, and failure contract |
+| `validation-evidence-record.md` | consumed | `validation/README.md` — real-world evidence class, implementation state, outcome maturity, limitations, and publication record |
 | `README.md` | consumed | Directory index |
 
 ## Workflows

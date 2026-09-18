@@ -37,7 +37,8 @@ The system has one canonical skill source and several runtime/export layers. Run
 | `workflows/` | Execution sequences | Loaded by governed skills | Governed workflow library |
 | `agents/` | Agent-role documentation | No | Documentation, not a skill layer |
 | `gpt-knowledge/pack/` | Generated Custom GPT knowledge export | Retrieval/knowledge only | Derived from canonical skills, references, contracts, and supporting libraries; non-canonical |
-| future OpenAI/Claude plugin packages | Installable distribution bundles | Only after actually packaged/installed | Derived distribution, never canonical |
+| `integrations/` | Runtime-neutral connector/MCP/API contracts and adapter truth states | Used when a host runtime exposes an authorized tool | Governed integration boundary; connection state remains runtime-specific |
+| `validation/` | Real-world evidence registry, privacy/publication rules, validation state | No | Governed evidence layer; does not create results |
 | `evaluations/`, `tests/evaluations/` | Quality and decision-behavior checks | No | Governed |
 | `docs/archive/` | Historical material | No | Excluded from active retrieval |
 
@@ -57,7 +58,7 @@ Each skill is a directory holding `SKILL.md` with YAML frontmatter (`name`, `des
 
 The canonical structure is intentionally portable: Codex and Claude Code both support skill-style `SKILL.md` packages, while runtime-specific packaging remains a distribution concern rather than a second source hierarchy.
 
-Capability status, governed, partially covered, planned, or unsupported, is declared in `CAPABILITY-REGISTRY.md`. The Marketing Router will not route to a capability absent from it.
+Capability status, governed, partially covered, planned, or unsupported, is declared in `CAPABILITY-REGISTRY.md`. Marketing analytics engineering and BI data products are owned by `$marketing-analytics`; tracking validity, causal diagnosis, stakeholder reporting, and business/channel decisions retain their existing owners. The Marketing Router will not route to a capability absent from it.
 
 ### Shared context
 
@@ -97,7 +98,21 @@ Root `CLAUDE.md` imports `AGENTS.md` for repository-level contributor instructio
 
 ### Custom GPT / ChatGPT
 
-`gpt-knowledge/pack/` is a generated reference export, not the executable source. `scripts/build-gpt-knowledge.py` rebuilds it from repository sources; `--check` detects drift and missing skill coverage. See [`gpt-knowledge/README.md`](gpt-knowledge/README.md) for included sources and limits. An installable OpenAI plugin or uploaded ChatGPT skill package is a future distribution artifact and must be validated separately before the repository is described as plugin-enabled.
+`gpt-knowledge/pack/` is a generated reference export, not the executable source. `scripts/build-gpt-knowledge.py` rebuilds it from repository sources; `--check` detects drift and missing skill coverage. See [`gpt-knowledge/README.md`](gpt-knowledge/README.md) for included sources and limits. Live account access is supplied by the active host/runtime through connectors, MCP servers, APIs, browser/computer tools, or analytics/BI runtimes that satisfy [`integrations/README.md`](integrations/README.md). A dedicated marketplace plugin is optional packaging, not a prerequisite for system completeness; no adapter is described as live until its runtime-specific connection state is verified.
+
+## Integration contract layer
+
+The governed skill layer remains the source of decision logic. External tools are adapters, not alternate marketing brains.
+
+Connection state is tracked separately from repository state:
+
+documented -> configured -> authenticated -> connected -> authorized -> verified
+
+The public repository stores adapter contracts in `integrations/`, never user credentials or an implied live session. Material writes still require the owning specialist, explicit scope authorization, pre-change state when rollback matters, and post-write verification.
+
+## Real-world validation layer
+
+The `validation/` registry records synthetic, anonymized-real, or verified-public evidence without upgrading one result into a universal rule. A structurally complete system may have an evidence base that continues to grow; public case-study claims require publishable evidence and permission.
 
 ## Ownership rule
 

@@ -373,6 +373,9 @@ Status definitions:
 | `performance-report.md` | owned | `$marketing-reporting` (linked from SKILL.md) — canonical report format |
 | `reporting-template.md` | archived | Weaker duplicate of `performance-report.md`; moved to `docs/archive/legacy-skill-stubs/reporting-template.flat.md` |
 | `strategy-template.md` | owned | `$growth-strategy` (linked from SKILL.md) — integrated business-level growth strategy, opportunity portfolio, sequencing, learning, and review record |
+| `marketing-data-contract.md` | owned | `$marketing-analytics` — source authority, grain/keys, metric semantics, model contract, data quality, privacy, and reconciliation |
+| `integration-contract.md` | consumed | `integrations/README.md` — runtime/tool connection, permission, mutation, verification, rollback, and failure contract |
+| `validation-evidence-record.md` | consumed | `validation/README.md` — real-world evidence class, implementation state, outcome maturity, limitations, and publication record |
 | `README.md` | consumed | Directory index |
 
 ## Workflows
@@ -400,3 +403,201 @@ When migration debt is cleared, the artifact must either become a `references/` 
 ## v1.5.0 addition
 
 `$retention-economics` (new skill, four references) and `optimization-scaling/references/budget-and-outcome-pacing.md` (new reference under the existing owner) are both owned at creation and require no entry here — the ownership rule applies to root `frameworks/`, `playbooks/`, `templates/`, and `workflows/`, not to skill-internal references, which are owned by construction.
+
+## Source: `integrations/README.md`
+
+# Integration Contract Layer
+
+Full-Stack Marketing OS is runtime-neutral. Skills contain the decision logic; integrations provide optional access to external data and actions.
+
+A dedicated all-in-one marketplace plugin is not required for system completeness. Codex, Claude Code, ChatGPT, or another host may expose connectors, MCP servers, APIs, browser/computer use, or local tools. An adapter is usable only when it satisfies this contract and its actual connection state is verified.
+
+## Integration states
+
+Use exact states:
+
+documented -> configured -> authenticated -> connected -> authorized -> verified
+
+- documented: contract exists only
+- configured: adapter/tool is installed or registered
+- authenticated: credentials/session are valid
+- connected: a bounded read succeeds against the intended account/resource
+- authorized: the requested read/write scope is explicitly permitted
+- verified: the exact requested action/read has been checked against the external source
+
+Never describe an adapter as live from documentation alone.
+
+## Required adapter fields
+
+Every registry entry declares:
+
+- id and provider
+- capability class
+- read/write boundary
+- authentication mechanism
+- minimum scopes/permissions
+- secrets location rule
+- supported objects/actions
+- mutation approval rule
+- verification rule
+- rollback/recovery rule for writes
+- data freshness expectations
+- current repository status
+
+See registry.json. The registry describes contracts, not user-specific connection state.
+
+## Read contract
+
+Before using a live source:
+
+1. identify the exact account/property/store/project/resource
+2. establish the intended source of truth
+3. use least-privilege read scope
+4. preserve provider timestamps/time zones/currencies
+5. report freshness and query window
+6. reconcile a bounded sample when the data affects a material decision
+
+## Mutation contract
+
+External mutations require:
+
+1. an owning Marketing OS skill
+2. explicit authorization for the exact account/resource/action
+3. pre-change state capture when rollback is meaningful
+4. bounded write
+5. provider response capture
+6. post-write readback/verification
+7. exact implementation state
+8. rollback or escalation if verification fails
+
+Approval for one budget, campaign, price, tracking rule, audience, page, or account does not authorize a materially different mutation.
+
+## Secrets
+
+- never commit credentials, API keys, refresh tokens, session cookies, private keys, or account secrets
+- use the host runtime/secret manager
+- do not echo secrets into logs, prompts, artifacts, or examples
+- adapters should fail closed when credentials are absent
+
+## Host-provided connectors and MCP
+
+A host-provided connector or MCP server can satisfy the integration layer without this repository shipping provider credentials or duplicating SDKs.
+
+The skill must still verify:
+
+- the tool is actually available
+- the intended account/resource is selected
+- read/write scope matches the task
+- the operation is authorized
+- the resulting state is read back when material
+
+Tool availability is runtime state, not repository state.
+
+## Plugin packaging
+
+A marketplace/plugin package is a distribution choice, not the source of marketing intelligence. If a future provider-specific package is created, it must:
+
+- point to canonical skills rather than fork them
+- declare permissions/resources
+- store no credentials in the repository
+- preserve approval and verification gates
+- pass the registry validator
+- be described as installable/live only after the target platform installation is actually verified
+
+This prevents "plugin not packaged" from being treated as an incomplete marketing capability.
+
+## Validation
+
+Run:
+
+python3 scripts/validate-system-boundaries.py
+
+The validator checks registry shape and truth-state constraints. It does not authenticate user accounts or prove a provider is reachable.
+
+## Source: `validation/README.md`
+
+# Real-World Validation
+
+This layer records evidence that a governed Marketing OS decision or implementation was exercised against real work.
+
+It does not manufacture case-study proof. Real-world validation is an evidence process, not a one-time repository checkbox.
+
+## Evidence classes
+
+Use one of:
+
+- synthetic: fictional data; useful for behavior and tooling checks only
+- anonymized-real: based on real work with identifying/confidential information removed; internal provenance must remain traceable
+- verified-public: real business/result that can be published with appropriate permission and supporting evidence
+
+Only verified-public may be presented publicly as a case study with achieved results.
+
+## Registry
+
+registry.json is the machine-readable index.
+
+A validation record may be registered only when it includes:
+
+- stable id
+- capability/owning skill
+- evidence class
+- business context at an appropriate privacy level
+- decision/request
+- evidence sources or provenance references
+- implementation state
+- outcome window/maturity rule
+- observed outcome
+- limitations/contradictions
+- permission/publication state
+- review state
+
+Do not put credentials, PII, client-confidential exports, or private account identifiers in the repository.
+
+## What counts as stronger validation
+
+Strength increases when the record has:
+
+1. real source evidence
+2. traceable definitions and time window
+3. verified implementation state
+4. mature primary business outcome and guardrails
+5. counterfactual/causal design where the claim requires causality
+6. negative/null outcomes preserved
+7. independent or human review
+8. replication in another scoped context before promoting a pattern
+
+One successful client result does not make a universal rule.
+
+## Real-world validation workflow
+
+permission + privacy review -> bounded evidence packet -> owning skill decision -> authorized implementation -> implementation verification -> maturity window -> outcome collection -> validity/measurement review -> scoped learning record -> optional public case study only if publishable
+
+## Public repository rule
+
+The public repository should normally store:
+
+- anonymized decision structure
+- metric definitions/formulas
+- redacted or aggregated evidence
+- validation result and limitations
+- provenance pointer that does not reveal private data
+
+Raw client exports and account screenshots should remain in the authorized private system unless explicit publication permission exists.
+
+## Validation states
+
+Use:
+
+registered -> evidence-complete -> implementation-verified -> outcome-mature -> reviewed -> publishable
+
+A record can stop at any earlier state. Do not skip a state in prose merely because later data exists.
+
+## Current evidence status
+
+The repository can be structurally complete while the real-world evidence base continues to grow. The registry must never claim a real-world count or success rate that the registered evidence does not support.
+
+Run:
+
+python3 scripts/validate-system-boundaries.py
+
+This validates registry truth-state rules; it does not create evidence.

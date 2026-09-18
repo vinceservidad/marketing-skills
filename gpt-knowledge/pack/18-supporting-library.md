@@ -1921,6 +1921,48 @@ Preserve revisions rather than rewriting the historical result.
 - Owner and approval status:
 - Learning-record destination: `templates/experiment-learning.md` or project-equivalent
 
+## Source: `templates/integration-contract.md`
+
+# Integration Contract
+
+## Adapter
+- ID:
+- Provider:
+- Capability:
+- Owning Marketing OS skill(s):
+- Runtime/tool:
+
+## Connection state
+- documented / configured / authenticated / connected / authorized / verified:
+- verified resource/account:
+- verification timestamp:
+
+## Authentication and permissions
+- authentication mechanism:
+- minimum scopes:
+- secrets location:
+- prohibited scopes/data:
+
+## Read boundary
+- objects:
+- query/date/resource bounds:
+- freshness:
+- source-of-truth notes:
+
+## Mutation boundary
+- allowed actions:
+- explicit approval required:
+- pre-change capture:
+- post-write verification:
+- rollback/recovery:
+
+## Failure behavior
+- authentication failure:
+- partial write:
+- stale source:
+- verification mismatch:
+- escalation owner:
+
 ## Source: `templates/knowledge-artifact.md`
 
 # Marketing OS Knowledge Artifact
@@ -2228,6 +2270,64 @@ Newest first. Preserve prior entries rather than rewriting history.
 - Do not place unnecessary personal data in this artifact.
 - When a decision materially changes the context, increment the context version and prepend a change-log entry.
 - If a decision-relevant section is stale or contradicted, mark the context partial or stale rather than letting downstream skills treat it as current.
+
+## Source: `templates/marketing-data-contract.md`
+
+# Marketing Data Contract
+
+## Decision supported
+- Business question:
+- Owning marketing skill:
+- Primary business outcome:
+- Guardrails:
+
+## Source inventory
+
+| Source | Object/table/report | Authority | Grain | Key | Update behavior | Freshness |
+|---|---|---|---|---|---|---|
+| | | | | | | |
+
+## Time and currency
+- Source time zone:
+- Reporting time zone:
+- Source currency:
+- Reporting currency:
+- FX rule:
+- Refund/cancellation maturity rule:
+
+## Metric semantics
+
+| Metric | Numerator | Denominator | Inclusions | Exclusions | Attribution/source | Aggregation |
+|---|---|---|---|---|---|---|
+| | | | | | | |
+
+## Model contract
+
+| Model | Grain | Primary key | Inputs | Incremental/backfill rule | Owner |
+|---|---|---|---|---|---|
+| | | | | | |
+
+## Data-quality checks
+- uniqueness:
+- nullability:
+- referential integrity:
+- freshness:
+- volume:
+- source reconciliation:
+- business invariants:
+
+## Privacy/access
+- sensitive fields:
+- minimum access:
+- retention:
+- redaction/aggregation:
+
+## Verification
+- source sample:
+- transformed sample:
+- reconciliation result:
+- unresolved mismatch:
+- implementation state:
 
 ## Source: `templates/marketing-decision-record.md`
 
@@ -3229,3 +3329,61 @@ Record when reprioritization happened because opportunity cost changed even thou
 - Do not judge plan quality by percentage of tasks completed; strategy may improve by stopping or reprioritizing work when evidence changes.
 - Specialist artifacts govern specialist decisions when they conflict with this summary.
 - No live mutation is authorized by this document alone.
+
+## Source: `templates/validation-evidence-record.md`
+
+# Validation Evidence Record
+
+## Identity
+- Validation ID:
+- Owning skill:
+- Evidence class: synthetic / anonymized-real / verified-public
+- State: registered / evidence-complete / implementation-verified / outcome-mature / reviewed / publishable
+
+## Context
+- Business context:
+- Geography:
+- Decision window:
+- Privacy/redaction notes:
+
+## Starting decision
+- Request:
+- Primary business outcome:
+- Guardrails:
+- Baseline:
+
+## Evidence
+| Evidence | State | Provenance | Definition/window | Limitation |
+|---|---|---|---|---|
+| | | | | |
+
+## Decision
+- Diagnosis:
+- Chosen action:
+- Non-priorities:
+- Authorization:
+
+## Implementation
+- exact change:
+- implementation state:
+- verification evidence:
+
+## Outcome
+- maturity rule/window:
+- observed result:
+- guardrails:
+- causal/measurement validity:
+- contradictions or nulls:
+
+## Learning
+- what is supported:
+- what is not supported:
+- transfer limits:
+- next decision:
+
+## Publication
+- permission state:
+- public/private:
+- evidence retained privately:
+- reviewer:
+- review date:

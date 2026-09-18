@@ -92,6 +92,17 @@
       "format": "table"
     },
     {
+      "id": "marketing-analytics",
+      "cases": "tests/evaluations/marketing-analytics-cases.md",
+      "review": "tests/evaluations/marketing-analytics-review.md",
+      "owners": [
+        "marketing-analytics"
+      ],
+      "case_count": 12,
+      "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
+      "format": "table"
+    },
+    {
       "id": "marketing-context-offer-strategy",
       "cases": "tests/evaluations/marketing-context-offer-strategy-cases.md",
       "review": "tests/evaluations/marketing-context-offer-strategy-review.md",
@@ -439,8 +450,8 @@
       "prompt_template": "Situation: {scenario}\n\nGive your assessment and state exactly what should happen next.",
       "format": "numbered",
       "live_exclusions": {
-        "4": "Historical flat SEO/copywriting references are archived and superseded by governed skills; see docs/archive/legacy-skill-stubs/README.md and ARTIFACT-OWNERSHIP.md.",
-        "3": "Requires evidence that the owning skill reaches the actual framework through its loading path; this text-only harness does not execute source traversal or runtime loading."
+        "3": "Requires evidence that the owning skill reaches the actual framework through its loading path; this text-only harness does not execute source traversal or runtime loading.",
+        "4": "Historical flat SEO/copywriting references are archived and superseded by governed skills; see docs/archive/legacy-skill-stubs/README.md and ARTIFACT-OWNERSHIP.md."
       }
     },
     {

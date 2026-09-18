@@ -32,12 +32,12 @@ BUNDLES = [
     ("12-seo", "Search Engine Optimization", ["seo"]),
     ("13-lifecycle-marketing", "Lifecycle and Email Marketing", ["lifecycle-marketing"]),
     ("14-measurement", "Tracking, Attribution, and Incrementality", ["tracking-measurement"]),
-    ("15-diagnostics-reporting-operations", "Diagnostics, Reporting, and Operations", ["performance-diagnostics", "marketing-reporting", "marketing-operations"]),
+    ("15-diagnostics-reporting-operations", "Analytics, Diagnostics, Reporting, and Operations", ["marketing-analytics", "performance-diagnostics", "marketing-reporting", "marketing-operations"]),
     ("16-activation-and-retention", "Activation, Retention, and Customer Economics", ["activation", "retention-strategy", "retention-economics"]),
     ("17-optimization-scaling", "Optimization and Scaling", ["optimization-scaling"]),
 ]
 BUNDLES.append(("18-supporting-library", "Frameworks, Playbooks, Workflows, and Templates", []))
-CONTRACTS = ["GLOSSARY.md", "KNOWLEDGE-TAXONOMY.md", "PLATFORM-CURRENCY.md", "ARTIFACT-OWNERSHIP.md"]
+CONTRACTS = ["GLOSSARY.md", "KNOWLEDGE-TAXONOMY.md", "PLATFORM-CURRENCY.md", "ARTIFACT-OWNERSHIP.md", "integrations/README.md", "validation/README.md"]
 LIBRARIES = ("frameworks", "playbooks", "workflows", "templates")
 HEADER = "<!-- GENERATED FILE — DO NOT EDIT. Built by scripts/build-gpt-knowledge.py. -->\n"
 # Canonical sources use inline Markdown links without whitespace in their targets.

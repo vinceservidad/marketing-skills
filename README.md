@@ -1,7 +1,7 @@
 # Full-Stack Marketing OS
 
 ![GitHub](https://img.shields.io/badge/status-public-brightgreen)
-![Version](https://img.shields.io/badge/version-v1.18.0-blue)
+![Version](https://img.shields.io/badge/version-v1.19.0-blue)
 ![Focus](https://img.shields.io/badge/focus-AI%20Marketing-purple)
 
 An evidence-led full-stack marketing skill and operating system for planning, auditing, diagnosing, creating, testing, and improving full-funnel marketing.
@@ -43,7 +43,7 @@ Full-Stack Marketing OS is currently a **portable skill system**, not a packaged
 - **OpenAI Codex:** supported as installable local skills.
 - **Claude Code:** supported as installable personal skills, with `CLAUDE.md` importing the repository-wide `AGENTS.md` rules.
 - **Custom GPT:** supported through the generated [`gpt-knowledge/pack/`](gpt-knowledge/pack/) reference export, with source coverage and drift checks.
-- **OpenAI plugin / Claude plugin:** not packaged yet. A future plugin can bundle the governed skills with tools/connectors while keeping `.agents/skills/` canonical.
+- **Live tools and integrations:** supported through host-provided connectors, MCP servers, APIs, browser/computer tools, warehouses, and BI runtimes that satisfy [`integrations/README.md`](integrations/README.md). A dedicated all-in-one marketplace plugin is optional distribution, not a missing marketing capability.
 
 See [`DISTRIBUTION.md`](DISTRIBUTION.md) for exact install paths, terminology, current support state, and plugin boundaries.
 
@@ -67,7 +67,7 @@ Decision / Deliverable / Learning
 
 ## Governed capabilities
 
-Thirty governed skills currently live in [`.agents/skills/`](.agents/skills/), the canonical executable layer.
+Thirty-one governed skills currently live in [`.agents/skills/`](.agents/skills/), the canonical executable layer.
 
 ### Strategy, context, commercial, and customer system
 
@@ -103,12 +103,12 @@ Thirty governed skills currently live in [`.agents/skills/`](.agents/skills/), t
 - `$retention-economics` — LTV, payback, cohort retention/churn, lead-to-revenue maturation
 - `$lifecycle-marketing` — segmentation, trigger logic, cadence, suppression, deliverability
 - `$tracking-measurement` — event integrity, attribution reconciliation, causal validity, experiment learning
+- `$marketing-analytics` — data contracts, warehouse/pipeline design, semantic metric layers, data quality, BI/dashboard implementation, refresh/backfill governance, source reconciliation
 - `$performance-diagnostics` — metric change, anomaly, competing explanations, causal triage
 - `$optimization-scaling` — paid-media readiness, marginal economics, controlled scaling/de-scaling, pacing
 - `$marketing-operations` — recurring cross-skill loops, state, idempotency, approval, verification, escalation
 - `$marketing-reporting` — cross-channel executive reporting, recurring reporting cadence, stakeholder scorecards
 
-Analytics remains **partially covered** where work becomes business-intelligence engineering, warehouse/pipeline design, or dashboard implementation outside the governed analytics owners.
 
 [`CAPABILITY-REGISTRY.md`](CAPABILITY-REGISTRY.md) is authoritative. A file existing in the repository does not make a capability governed.
 
@@ -147,6 +147,8 @@ templates/             Governed reusable deliverable structures
 workflows/             Governed execution sequences
 agents/                Agent-role documentation, non-executable
 gpt-knowledge/pack/     Generated Custom GPT reference export, non-canonical
+integrations/           Runtime-neutral connector/MCP/API contracts and truth-state registry
+validation/             Real-world validation evidence registry and publication rules
 evaluations/           Routing cases and reviewer checklists
 tests/evaluations/     Versioned decision cases and executable suite registry
 examples/              Synthetic worked demonstrations
@@ -195,6 +197,7 @@ python3 scripts/eval.py --static
 python3 -m unittest discover -s tests -p 'test_*.py' -v
 python3 scripts/check-markdown-links.py
 bash scripts/validate-agent-distribution.sh .
+python3 scripts/validate-system-boundaries.py
 ```
 
 The GPT pack is generated from current canonical material. Rebuild it with
@@ -224,8 +227,8 @@ No live model benchmark has been run as part of this reconciliation.
 The detailed, reconciled roadmap is in [`ROADMAP.md`](ROADMAP.md). Current priorities are:
 
 - run and review a reproducible live-model benchmark; distinguish grading output from human-reviewed behavior and business outcomes
-- validate high-value skills against anonymized real-world cases where permission and evidence allow
-- document data contracts and define MCP/connector approval, rollback, and verification boundaries before adding live integrations
+- grow the real-world validation registry with anonymized or verified-public cases where permission and evidence allow; preserve nulls, failures, and scope limits
+- apply the governed integration contract to provider-specific adapters only when a real runtime/account needs them; connection state remains runtime-specific
 - add maintainability checks that prevent stale capability counts, roadmap claims, and public-navigation drift
 - expand behavioral evaluations and worked examples only when real usage exposes a decision-quality gap
 

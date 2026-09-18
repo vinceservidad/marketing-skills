@@ -158,6 +158,7 @@ Examples of important boundaries:
 - `$retention-strategy` chooses cause-matched interventions; `$retention-economics` measures realized cohort behavior and economics.
 - `$creative-strategy` owns paid-ad concept/message/visual direction; channel skills own current placement-specific creative-fit requirements.
 - `$marketing-reporting` owns recurring communication; `$marketing-operations` owns stateful recurring decision operations.
+- `$marketing-analytics` owns data contracts, warehouse/pipeline/model engineering, semantic metrics, data quality, and BI/dashboard implementation; `$tracking-measurement` owns instrumentation/attribution validity, `$performance-diagnostics` owns causal diagnosis, and `$marketing-reporting` owns stakeholder narrative.
 - `$marketing-router` owns cross-skill routing and lifecycle coordination; it does not inherit the specialist decisions inside a plan.
 
 Do not silently absorb a neighboring capability because it is convenient.
@@ -198,9 +199,19 @@ Skills provide decision logic. They do not automatically provide access to exter
 
 If the task needs live Google Ads, Meta, Shopify, GA4, Search Console, Klaviyo, CRM, or another system, use only tools/connectors/MCP/API/browser access that is actually available and authorized. Otherwise work from supplied exports or clearly state the access limitation.
 
+Apply [`integrations/README.md`](integrations/README.md) to external data/actions. Treat documented, configured, authenticated, connected, authorized, and verified as different states. The repository integration registry is a contract registry, not proof that a user account is connected.
+
 Never fabricate a live read, saved change, publication state, or verification result.
 
-## 9. Review business outcomes, not convenient proxies
+## 9. Engineer analytics data products without stealing decision ownership
+
+When the task is a warehouse, pipeline, data contract, metric layer, BI dataset, or dashboard implementation, route the data product to `$marketing-analytics`.
+
+Declare grain, keys, source authority, metric semantics, time/currency basis, refresh/backfill behavior, quality checks, and reconciliation before calling the output trustworthy. A rendered dashboard or successful ETL run is not data verification.
+
+The analytics layer supplies decision-ready data. It does not inherit causal diagnosis, reporting narrative, channel decisions, growth strategy, or scaling decisions.
+
+## 10. Review business outcomes, not convenient proxies
 
 Prefer the primary business outcome and relevant economics over isolated platform metrics.
 
@@ -210,7 +221,7 @@ Keep cross-platform attribution claims separate unless a valid deduplicated meas
 
 At `review`, separate observed result from mechanism interpretation. At `optimize`, choose the next action from the evidence rather than from a generic “best practice.”
 
-## 10. Record learning at the right scope
+## 11. Record learning at the right scope
 
 A valid result should retain:
 
@@ -275,6 +286,7 @@ Before returning a substantial Marketing OS result, check:
 - Is there one clear primary decision owner?
 - Are facts, calculations, inference, assumptions, and unknowns separated?
 - Are current platform claims verified when freshness matters?
+- If the task creates a data product, are grain, keys, metric semantics, source reconciliation, freshness, and privacy explicit?
 - Are relevant business economics and guardrails included?
 - Did the answer avoid unsupported benchmarks and universal claims?
 - Did any neighboring skill's boundary get crossed without a handoff?
