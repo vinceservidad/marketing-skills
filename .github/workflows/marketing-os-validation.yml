@@ -22,6 +22,8 @@ on:
       - "evaluations/**"
       - "examples/**"
       - "gpt-knowledge/**"
+      - "integrations/**"
+      - "validation/**"
       - "docs/**"
       - "skills/**"
       - "workflows/**"
@@ -56,6 +58,8 @@ jobs:
         run: scripts/validate-scaling-system.sh .
       - name: Check platform freshness
         run: python3 scripts/check-platform-freshness.py .
+      - name: Validate system boundaries
+        run: python3 scripts/validate-system-boundaries.py
       - name: Validate evaluation corpus and routing references
         run: python3 scripts/eval.py --static
       - name: GPT export matches current canonical content
