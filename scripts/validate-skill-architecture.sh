@@ -165,13 +165,20 @@ for candidate in walk(repo):
     if skills_dir in candidate.parents:
         continue
     if portable in candidate.parents:
-        # Generated portable copies are allowed only in skills/<name>/ and are
-        # validated byte-for-byte by scripts/build-portable-skills.py --check.
+        # The portable generator may include linked SKILL.md files from another
+        # governed skill under <bundle>/_shared/. They are dependencies, not
+        # separately discoverable top-level skills. Byte-exact drift validation
+        # runs before this validator in CI.
         relative = candidate.relative_to(portable)
-        if len(relative.parts) == 2 and relative.parts[1] == "SKILL.md" and relative.parts[0] in names:
-            text = candidate.read_text(encoding="utf-8")
-            if "GENERATED PORTABLE SKILL" not in text:
-                fail(f"Portable skill is not marked generated: {rel(candidate)}")
+        if len(relative.parts) >= 2 and relative.parts[0] in names:
+            bundle_root = portable / relative.parts[0] / "SKILL.md"
+            if not bundle_root.is_file():
+                fail(f"Portable bundle has no root SKILL.md: {rel(candidate)}")
+                continue
+            root_text = bundle_root.read_text(encoding="utf-8")
+            if "GENERATED PORTABLE SKILL" not in root_text:
+                fail(f"Portable bundle is not marked generated: {rel(bundle_root)}")
+                continue
             continue
     fail(f"SKILL.md outside the canonical or generated portable layer: {rel(candidate)}")
 
